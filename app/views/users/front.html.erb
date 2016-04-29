@@ -1,0 +1,177 @@
+<h2>Back of House Evaluation</h2>
+<br> </br>
+
+<% @users.each do |user| %>
+    
+    <h4> <%= user.name  %> </h4>
+    <h3> Do you have HEART?</h3>
+    
+    
+    <%= form_for(user) do |f| %>
+    <% begin %>
+        
+        
+           <h8> Hunger for Wisdom </h8>
+            <div class="form-inline">
+            <div class="form-group">
+                 <%= f.radio_button :current_one, 1 %>
+                 <h7> 1 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_one, 2 %>
+                 <h7> 2 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_one, 3 %>
+                 <h7> 3 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_one, 4 %>
+                 <h7> 4 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_one, 5 %>
+                 <h7> 5 </h7>
+            </div>
+            </div>
+    
+        
+        <h8> Expect the Best </h8>
+            <div class="form-inline">
+            <div class="form-group">
+                 <%= f.radio_button :current_two, 1 %>
+                 <h7> 1 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_two, 2 %>
+                 <h7> 2 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_two, 3 %>
+                 <h7> 3 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_two, 4 %>
+                 <h7> 4 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_two, 5 %>
+                 <h7> 5 </h7>
+            </div>
+            </div>
+            
+        <h8> Accept Responsibility </h8>
+            <div class="form-inline">
+            <div class="form-group">
+                 <%= f.radio_button :current_three, 1 %>
+                 <h7> 1 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_three, 2 %>
+                 <h7> 2 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_three, 3 %>
+                 <h7> 3 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_three, 4 %>
+                 <h7> 4 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_three, 5 %>
+                 <h7> 5 </h7>
+            </div>
+            </div>
+            
+        <h8> Respond with Courage </h8>
+            <div class="form-inline">
+            <div class="form-group">
+                 <%= f.radio_button :current_four, 1 %>
+                 <h7> 1 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_four, 2 %>
+                 <h7> 2 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_four, 3 %>
+                 <h7> 3 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_four, 4 %>
+                 <h7> 4 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_four, 5 %>
+                 <h7> 5 </h7>
+            </div>
+            </div>
+            
+        <h8> Think others first </h8>
+            <div class="form-inline">
+            <div class="form-group">
+                 <%= f.radio_button :current_five, 1 %>
+                 <h7> 1 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_five, 2 %>
+                 <h7> 2 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_five, 3 %>
+                 <h7> 3 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_five, 4 %>
+                 <h7> 4 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_five, 5 %>
+                 <h7> 5 </h7>
+            </div>
+            </div>
+            
+        <h8> Communicating respectively to Guests and Team Members </h8>
+            <div class="form-inline">
+            <div class="form-group">
+                 <%= f.radio_button :current_extra_one, 1 %>
+                 <h7> 1 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_extra_one, 2 %>
+                 <h7> 2 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_extra_one, 3 %>
+                 <h7> 3 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_extra_one, 4 %>
+                 <h7> 4 </h7>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_extra_one, 5 %>
+                 <h7> 5 </h7>
+            </div>
+            </div>
+        
+         <div class="col-md-3 col-md-offset-4">
+      <%= f.submit "Submit Score", class: "btn btn-default" %>
+      
+
+
+        <% rescue ActionController::RedirectBackError %>
+        
+        
+</div>
+</div>
+   
+    <% end %>
+    
+    <%= paginate @users %>
+   
+   <% end %>
+   
+<% end %>
+

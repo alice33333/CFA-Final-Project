@@ -1,0 +1,168 @@
+<h2>Team Member Evaluation</h2>
+<br> </br>
+
+<% @users.each do |user| %>
+    
+    <h4> <%= user.name  %> </h4>
+    <h3> Do you have HEART?</h3>
+    
+    
+    <%= form_for(user) do |f| %>
+    <% begin %>
+        
+        
+           <div class="form-group">
+            <%= f.label :Hunger_for_wisdom %></label
+            <div class="col-xs-10">
+            <div class="form-inline">
+            <div class="form-group">
+                 <%= f.radio_button :current_one, 1 %>
+                 <%= f.label :_1 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_one, 2 %>
+                 <%= f.label :_2 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_one, 3 %>
+                 <%= f.label :_3 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_one, 4 %>
+                 <%= f.label :_4 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_one, 5 %>
+                 <%= f.label :_5 %>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+            <%= f.label :Expect_the_Best %></label
+            <div class="col-xs-10">
+            <div class="form-inline">
+            <div class="form-group">
+                 <%= f.radio_button :current_two, 1 %>
+                 <%= f.label :_1 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_two, 2 %>
+                 <%= f.label :_2 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_two, 3 %>
+                 <%= f.label :_3 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_two, 4 %>
+                 <%= f.label :_4 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_two, 5 %>
+                 <%= f.label :_5 %>
+            </div>
+        </div>
+    </div>
+    
+     <div class="form-group">
+            <%= f.label :Accept_Responsibility %></label
+            <div class="col-xs-10">
+            <div class="form-inline">
+            <div class="form-group">
+                 <%= f.radio_button :current_three, 1 %>
+                 <%= f.label :_1 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_three, 2 %>
+                 <%= f.label :_2 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_three, 3 %>
+                 <%= f.label :_3 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_three, 4 %>
+                 <%= f.label :_4 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_three, 5 %>
+                 <%= f.label :_5 %>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="form-group">
+            <%= f.label :Respond_with_Courage %></label
+            <div class="col-xs-10">
+            <div class="form-inline">
+            <div class="form-group">
+                 <%= f.radio_button :current_four, 1 %>
+                 <%= f.label :_1 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_four, 2 %>
+                 <%= f.label :_2 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_four, 3 %>
+                 <%= f.label :_3 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_four, 4 %>
+                 <%= f.label :_4 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_four, 5 %>
+                 <%= f.label :_5 %>
+            </div>
+        </div>
+    </div>
+    
+     <div class="form-group">
+            <%= f.label :Think_others_first %></label
+            <div class="col-xs-10">
+            <div class="form-inline">
+            <div class="form-group">
+                 <%= f.radio_button :current_five, 1 %>
+                 <%= f.label :_1 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_five, 2 %>
+                 <%= f.label :_2 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_five, 3 %>
+                 <%= f.label :_3 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_five, 4 %>
+                 <%= f.label :_4 %>
+            </div>
+            <div class="form-group">
+                 <%= f.radio_button :current_five, 5 %>
+                 <%= f.label :_5 %>
+            </div>
+        </div>
+    </div>
+        
+         <div class="col-md-3 col-md-offset-4">
+      <%= f.submit "Submit Score", class: "btn btn-default" %>
+      
+
+
+        <% rescue ActionController::RedirectBackError %>
+        
+        
+</div>
+</div>
+
+   
+    <% end %>
+    
+    <%= paginate @users %>
+   
+   <% end %>
+   
+<% end %>
