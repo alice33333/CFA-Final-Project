@@ -45,6 +45,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     # MAKE DEFAULT IN DATABASE CREATION AND TRY TO ADD USER_PARAMS
+      if @user.save
+        
       @user.update_attribute :question_one, 0.0
       @user.update_attribute :question_two, 0.0
       @user.update_attribute :question_three, 0.0
@@ -55,7 +57,18 @@ class UsersController < ApplicationController
       @user.update_attribute :three_counter, 0
       @user.update_attribute :four_counter, 0
       @user.update_attribute :five_counter, 0
-      if @user.save
+      
+      @user.update_attribute :extra_one, 0.0
+      @user.update_attribute :extra_two, 0.0
+      @user.update_attribute :extra_three, 0.0
+      @user.update_attribute :extra_four, 0.0
+      @user.update_attribute :extra_five, 0.0
+      @user.update_attribute :extra_one_counter, 0
+      @user.update_attribute :extra_two_counter, 0
+      @user.update_attribute :extra_three_counter, 0
+      @user.update_attribute :extra_four_counter, 0
+      @user.update_attribute :extra_five_counter, 0
+        
         if @user.role == 0 
           @user.update_attribute :admin, true
         end
@@ -280,6 +293,201 @@ class UsersController < ApplicationController
           @user.update_attribute :question_five, average4
           #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
       end
+      
+      # EXTRA QUESTION ONE
+      average5 = 0
+      if @user.current_extra_one == 1 
+          @user.increment(:extra_one_counter, 1)
+          @user.save
+          @user.increment(:total_extra_one, 1)
+          average5 = (@user.total_extra_one / @user.extra_one_counter)
+          @user.update_attribute :extra_one, average5
+      end
+      if @user.current_extra_one == 2
+          @user.increment(:extra_one_counter, 1)
+          @user.save
+          @user.increment(:total_extra_one, 2)
+          average5 = (@user.total_extra_one / @user.extra_one_counter)
+          @user.update_attribute :extra_one, average5
+      end
+      if @user.current_extra_one == 3 
+          @user.increment(:extra_one_counter, 1)
+          @user.save
+          @user.increment(:total_extra_one, 3)
+          average5 = (@user.total_extra_one / @user.extra_one_counter)
+          @user.update_attribute :extra_one, average5
+      end
+      if @user.current_extra_one == 4
+          @user.increment(:extra_one_counter, 1)
+          @user.save
+          @user.increment(:total_extra_one, 4)
+          average5 = (@user.total_extra_one / @user.extra_one_counter)
+          @user.update_attribute :extra_one, average5
+      end
+      if @user.current_extra_one == 5
+          @user.increment(:extra_one_counter, 1)
+          @user.save
+          @user.increment(:total_extra_one, 5)
+          average5 = (@user.total_extra_one / @user.extra_one_counter)
+          @user.update_attribute :extra_one, average5
+          #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
+      end
+      
+      # EXTRA QUESTION TWO
+      average6 = 0
+      if @user.current_extra_two == 1 
+          @user.increment(:extra_two_counter, 1)
+          @user.save
+          @user.increment(:total_extra_two, 1)
+          average6 = (@user.total_extra_two / @user.extra_two_counter)
+          @user.update_attribute :extra_two, average6
+      end
+      if @user.current_extra_two == 2
+          @user.increment(:extra_two_counter, 1)
+          @user.save
+          @user.increment(:total_extra_two, 2)
+          average6 = (@user.total_extra_two / @user.extra_two_counter)
+          @user.update_attribute :extra_two, average6
+      end
+      if @user.current_extra_two == 3 
+          @user.increment(:extra_two_counter, 1)
+          @user.save
+          @user.increment(:total_extra_two, 3)
+          average6 = (@user.total_extra_two / @user.extra_two_counter)
+          @user.update_attribute :extra_two, average6
+      end
+      if @user.current_extra_two == 4
+          @user.increment(:extra_two_counter, 1)
+          @user.save
+          @user.increment(:total_extra_two, 4)
+          average6 = (@user.total_extra_two / @user.extra_two_counter)
+          @user.update_attribute :extra_two, average6
+      end
+      if @user.current_extra_two == 5
+          @user.increment(:extra_two_counter, 1)
+          @user.save
+          @user.increment(:total_extra_two, 5)
+          average6 = (@user.total_extra_two / @user.extra_two_counter)
+          @user.update_attribute :extra_two, average6
+          #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
+      end
+      
+      # EXTRA QUESTION THREE
+      average7 = 0
+      if @user.current_extra_three == 1 
+          @user.increment(:extra_three_counter, 1)
+          @user.save
+          @user.increment(:total_extra_three, 1)
+          average7 = (@user.total_extra_three / @user.extra_three_counter)
+          @user.update_attribute :extra_three, average7
+      end
+      if @user.current_extra_three == 2
+          @user.increment(:extra_three_counter, 1)
+          @user.save
+          @user.increment(:total_extra_three, 2)
+          average7 = (@user.total_extra_three / @user.extra_three_counter)
+          @user.update_attribute :extra_three, average7
+      end
+      if @user.current_extra_three == 3 
+          @user.increment(:extra_three_counter, 1)
+          @user.save
+          @user.increment(:total_extra_three, 3)
+          average7 = (@user.total_extra_three / @user.extra_three_counter)
+          @user.update_attribute :extra_three, average7
+      end
+      if @user.current_extra_three == 4
+          @user.increment(:extra_three_counter, 1)
+          @user.save
+          @user.increment(:total_extra_three, 4)
+          average7 = (@user.total_extra_three / @user.extra_three_counter)
+          @user.update_attribute :extra_three, average7
+      end
+      if @user.current_extra_three == 5
+          @user.increment(:extra_three_counter, 1)
+          @user.save
+          @user.increment(:total_extra_three, 5)
+          average7 = (@user.total_extra_three / @user.extra_three_counter)
+          @user.update_attribute :extra_three, average7
+          #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
+      end
+      
+       # EXTRA QUESTION FOUR
+      average8 = 0
+      if @user.current_extra_four == 1 
+          @user.increment(:extra_four_counter, 1)
+          @user.save
+          @user.increment(:total_extra_four, 1)
+          average8 = (@user.total_extra_four / @user.extra_four_counter)
+          @user.update_attribute :extra_four, average8
+      end
+      if @user.current_extra_four == 2
+          @user.increment(:extra_four_counter, 1)
+          @user.save
+          @user.increment(:total_extra_four, 2)
+          average8 = (@user.total_extra_four / @user.extra_three_counter)
+          @user.update_attribute :extra_four, average8
+      end
+      if @user.current_extra_four == 3 
+          @user.increment(:extra_four_counter, 1)
+          @user.save
+          @user.increment(:total_extra_four, 3)
+          average8 = (@user.total_extra_four / @user.extra_four_counter)
+          @user.update_attribute :extra_four, average8
+      end
+      if @user.current_extra_four == 4
+          @user.increment(:extra_four_counter, 1)
+          @user.save
+          @user.increment(:total_extra_four, 4)
+          average8 = (@user.total_extra_four / @user.extra_four_counter)
+          @user.update_attribute :extra_four, average8
+      end
+      if @user.current_extra_four == 5
+          @user.increment(:extra_four_counter, 1)
+          @user.save
+          @user.increment(:total_extra_four, 5)
+          average8= (@user.total_extra_four / @user.extra_four_counter)
+          @user.update_attribute :extra_four, average8
+          #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
+      end
+      
+       # EXTRA QUESTION FIVE
+      average9 = 0
+      if @user.current_extra_five == 1 
+          @user.increment(:extra_five_counter, 1)
+          @user.save
+          @user.increment(:total_extra_five, 1)
+          average9 = (@user.total_extra_five / @user.extra_five_counter)
+          @user.update_attribute :extra_five, average9
+      end
+      if @user.current_extra_five == 2
+          @user.increment(:extra_five_counter, 1)
+          @user.save
+          @user.increment(:total_extra_five, 2)
+          average9 = (@user.total_extra_five / @user.extra_five_counter)
+          @user.update_attribute :extra_five, average9
+      end
+      if @user.current_extra_five == 3 
+          @user.increment(:extra_five_counter, 1)
+          @user.save
+          @user.increment(:total_extra_five, 3)
+          average9 = (@user.total_extra_five / @user.extra_five_counter)
+          @user.update_attribute :extra_five, average9
+      end
+      if @user.current_extra_five == 4
+          @user.increment(:extra_five_counter, 1)
+          @user.save
+          @user.increment(:total_extra_five, 4)
+          average9 = (@user.total_extra_five / @user.extra_five_counter)
+          @user.update_attribute :extra_five, average9
+      end
+      if @user.current_extra_five == 5
+          @user.increment(:extra_five_counter, 1)
+          @user.save
+          @user.increment(:total_extra_five, 5)
+          average9 = (@user.total_extra_five / @user.extra_five_counter)
+          @user.update_attribute :extra_five, average9
+          #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
+      end
   
   # ADD ADMIN AND SECOND_TIER UPDATES HERE
       if @user.role == 0 
@@ -323,7 +531,11 @@ class UsersController < ApplicationController
                                    :two_counter, :current_two, :total_two, :three_counter, :current_three, :total_three,
                                    :four_counter, :current_four, :total_four,
                                    :five_counter, :current_five, :total_five,
-                                   :extra_one, :extra_two, :extra_three, :extra_four, :extra_five)
+                                   :extra_one, :extra_one_counter, :current_extra_one,
+                                   :extra_two, :extra_two_counter, :current_extra_two,
+                                   :extra_three, :extra_three_counter, :current_extra_three,
+                                   :extra_four, :extra_four_counter, :current_extra_four,
+                                   :extra_five, :extra_five_counter, :current_extra_five)
   end
   
   def user_question_params

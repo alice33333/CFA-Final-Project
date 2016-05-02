@@ -45,9 +45,30 @@ h1 {
 h2 {
   font-size: 3.5em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   margin-right: 30px;
   text-align: center;
+
+}
+
+red {
+  color: #CC0000;
+}
+
+orange {
+  color: #FF8000;
+}
+
+yellow {
+  color: #CCCC00;
+}
+
+lime {
+  color: #66CC00;
+}
+
+green {
+  color: #009900;
 }
 
 h3 {
@@ -72,7 +93,7 @@ h6 {
   font-size: 3.5em;
   letter-spacing: 30px;
   margin-top: 100px;
-  margin-bottom: -5px;
+  margin-bottom: 10px;
   margin-right: 30px;
   text-align: center;
 }
@@ -206,6 +227,14 @@ aside {
       margin-top: 0px;
     }
   }
+}
+
+.divider{
+    position:absolute;
+    left:50%;
+    top:10%;
+    bottom:10%;
+    border-left:1px solid white;
 }
 
 

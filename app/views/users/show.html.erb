@@ -1,4 +1,3 @@
-
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="col-md-11 ">
@@ -59,19 +58,252 @@
       <div class="form-group">
             <div class="form-inline">
             <div class="form-group">
-                  <h2> <%= @user.question_one %> </h2>
+                <% if @user.question_one == 0.0 %>
+                    <h2> <%= @user.question_one %> </h2>
+                <% end %>
+                <% if @user.question_one >= 1.0 && @user.question_one <= 1.9 %>
+                  <red><h2> <%= @user.question_one %> </h2></red>
+                <% end %>
+                <% if @user.question_one >= 2.0 && @user.question_one <= 2.9 %>
+                  <orange><h2> <%= @user.question_one %> </h2></orange>
+                <% end %>
+                <% if @user.question_one >= 3.0 && @user.question_one <= 3.9 %>
+                  <yellow><h2> <%= @user.question_one %> </h2></yellow>
+                <% end %>
+                <% if @user.question_one >= 4.0 && @user.question_one <= 4.9 %>
+                  <lime><h2> <%= @user.question_one %> </h2></lime>
+                <% end %>
+                <% if @user.question_one == 5.0 %>
+                  <green><h2> <%= @user.question_one %> </h2></green>
+                <% end %>
             </div>
             <div class="form-group">
-                  <h2> <%= @user.question_two %> </h2>
+                <% if @user.question_two == 0.0 %>
+                    <h2> <%= @user.question_two %> </h2>
+                <% end %>
+                  <% if @user.question_two >= 1.0 && @user.question_two <= 1.9 %>
+                  <red><h2> <%= @user.question_two %> </h2></red>
+                <% end %>
+                <% if @user.question_two >= 2.0 && @user.question_two <= 2.9 %>
+                  <orange><h2> <%= @user.question_two %> </h2></orange>
+                <% end %>
+                <% if @user.question_two >= 3.0 && @user.question_two <= 3.9 %>
+                  <yellow><h2> <%= @user.question_two %> </h2></yellow>
+                <% end %>
+                <% if @user.question_two >= 4.0 && @user.question_two <= 4.9 %>
+                  <lime><h2> <%= @user.question_two %> </h2></lime>
+                <% end %>
+                <% if @user.question_two == 5.0 %>
+                  <green><h2> <%= @user.question_two %> </h2></green>
+                <% end %>
             </div>
             <div class="form-group">
-                  <h2> <%= @user.question_three %> </h2>
+                <% if @user.question_three == 0.0 %>
+                    <h2> <%= @user.question_three %> </h2>
+                <% end %>
+                  <% if @user.question_three >= 1.0 && @user.question_three <= 1.9 %>
+                  <red><h2> <%= @user.question_three %> </h2></red>
+                <% end %>
+                <% if @user.question_three >= 2.0 && @user.question_three <= 2.9 %>
+                  <orange><h2> <%= @user.question_three %> </h2></orange>
+                <% end %>
+                <% if @user.question_three >= 3.0 && @user.question_three <= 3.9 %>
+                  <yellow><h2> <%= @user.question_three %> </h2></yellow>
+                <% end %>
+                <% if @user.question_three >= 4.0 && @user.question_three <= 4.9 %>
+                  <lime><h2> <%= @user.question_three %> </h2></lime>
+                <% end %>
+                <% if @user.question_three == 5.0 %>
+                  <green><h2> <%= @user.question_three %> </h2></green>
+                <% end %>
             </div>
             <div class="form-group">
-                  <h2> <%= @user.question_four %> </h2>
+                <% if @user.question_four == 0.0 %>
+                    <h2> <%= @user.question_four %> </h2>
+                <% end %>
+                  <% if @user.question_four >= 1.0 && @user.question_four <= 1.9 %>
+                  <red><h2> <%= @user.question_four %> </h2></red>
+                <% end %>
+                <% if @user.question_four >= 2.0 && @user.question_four <= 2.9 %>
+                  <orange><h2> <%= @user.question_four %> </h2></orange>
+                <% end %>
+                <% if @user.question_four >= 3.0 && @user.question_four <= 3.9 %>
+                  <yellow><h2> <%= @user.question_four %> </h2></yellow>
+                <% end %>
+                <% if @user.question_four >= 4.0 && @user.question_four <= 4.9 %>
+                  <lime><h2> <%= @user.question_four %> </h2></lime>
+                <% end %>
+                <% if @user.question_four == 5.0 %>
+                  <green><h2> <%= @user.question_four %> </h2></green>
+                <% end %>
             </div>
             <div class="form-group">
-                  <h2> <%= @user.question_five %> </h2>
+                <% if @user.question_five == 0.0 %>
+                    <h2> <%= @user.question_five %> </h2>
+                <% end %>
+                  <% if @user.question_five >= 1.0 && @user.question_five <= 1.9 %>
+                  <red><h2> <%= @user.question_five %> </h2></red>
+                <% end %>
+                <% if @user.question_five >= 2.0 && @user.question_five <= 2.9 %>
+                  <orange><h2> <%= @user.question_five %> </h2></orange>
+                <% end %>
+                <% if @user.question_five >= 3.0 && @user.question_five <= 3.9 %>
+                  <yellow><h2> <%= @user.question_five %> </h2></yellow>
+                <% end %>
+                <% if @user.question_five >= 4.0 && @user.question_five <= 4.9 %>
+                  <lime><h2> <%= @user.question_five %> </h2></lime>
+                <% end %>
+                <% if @user.question_five == 5.0 %>
+                  <green><h2> <%= @user.question_five %> </h2></green>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    </aside>
+    
+    <!-- store's average -->
+    <aside class="col-md-11 col-md-offset-2">
+      <div class="form-group">
+            <div class="form-inline">
+            <div class="form-group">
+                  <% average = User.average(:question_one) %>
+                  <h2> <%= number_with_precision(average, :precision => 1) %> </h2>
+            </div>
+            <div class="form-group">
+                  <% average1 = User.average(:question_two) %>
+                  <h2> <%= number_with_precision(average1, :precision => 1) %> </h2>
+            </div>
+            <div class="form-group">
+                  <% average2 = User.average(:question_three) %>
+                  <h2> <%= number_with_precision(average2, :precision => 1) %> </h2>
+            </div>
+            <div class="form-group">
+                  <% average3 = User.average(:question_four) %>
+                  <h2> <%= number_with_precision(average3, :precision => 1) %> </h2>
+            </div>
+            <div class="form-group">
+                  <% average4 = User.average(:question_five) %>
+                  <h2> <%= number_with_precision(average4, :precision => 1) %> </h2>
+            </div>
+        </div>
+    </div>
+    </aside>
+    <% end %>
+    
+     <% if @user.role == 1 || @user.role == 2 || @user.role == 3 || @user.role == 4 || @user.role == 5 %>
+       <aside class="col-md-3 col-md-offset-1">
+      <div class="form-group">
+            <div class="form-inline">
+            <div class="form-group">
+                  <h6> Questions </h6>
+            </div>
+        </div>
+    </div>
+    </aside>
+    
+    <!-- extra question results -->
+     <aside class="col-md-11 col-md-offset-2">
+      <div class="form-group">
+            <div class="form-inline">
+            <div class="form-group">
+                <% if @user.extra_one == 0.0 %>
+                    <h2> <%= @user.extra_one %> </h2>
+                <% end %>
+                <% if @user.extra_one >= 1.0 && @user.extra_one <= 1.9 %>
+                  <red><h2> <%= @user.extra_one %> </h2></red>
+                <% end %>
+                <% if @user.extra_one >= 2.0 && @user.extra_one <= 2.9 %>
+                  <orange><h2> <%= @user.extra_one %> </h2></orange>
+                <% end %>
+                <% if @user.extra_one >= 3.0 && @user.extra_one <= 3.9 %>
+                  <yellow><h2> <%= @user.extra_one %> </h2></yellow>
+                <% end %>
+                <% if @user.extra_one >= 4.0 && @user.extra_one <= 4.9 %>
+                  <lime><h2> <%= @user.extra_one %> </h2></lime>
+                <% end %>
+                <% if @user.extra_one == 5.0 %>
+                  <green><h2> <%= @user.extra_one %> </h2></green>
+                <% end %>
+            </div>
+            <div class="form-group">
+                <% if @user.extra_two == 0.0 %>
+                    <h2> <%= @user.extra_two %> </h2>
+                <% end %>
+                  <% if @user.extra_two >= 1.0 && @user.extra_two <= 1.9 %>
+                  <red><h2> <%= @user.extra_two %> </h2></red>
+                <% end %>
+                <% if @user.extra_two >= 2.0 && @user.extra_two <= 2.9 %>
+                  <orange><h2> <%= @user.extra_two %> </h2></orange>
+                <% end %>
+                <% if @user.extra_two >= 3.0 && @user.extra_two <= 3.9 %>
+                  <yellow><h2> <%= @user.extra_two %> </h2></yellow>
+                <% end %>
+                <% if @user.extra_two >= 4.0 && @user.extra_two <= 4.9 %>
+                  <lime><h2> <%= @user.extra_two %> </h2></lime>
+                <% end %>
+                <% if @user.extra_two == 5.0 %>
+                  <green><h2> <%= @user.extra_two %> </h2></green>
+                <% end %>
+            </div>
+            <div class="form-group">
+                <% if @user.extra_three == 0.0 %>
+                    <h2> <%= @user.extra_three %> </h2>
+                <% end %>
+                  <% if @user.extra_three >= 1.0 && @user.extra_three <= 1.9 %>
+                  <red><h2> <%= @user.extra_three %> </h2></red>
+                <% end %>
+                <% if @user.extra_three >= 2.0 && @user.extra_three <= 2.9 %>
+                  <orange><h2> <%= @user.extra_three %> </h2></orange>
+                <% end %>
+                <% if @user.extra_three >= 3.0 && @user.extra_three <= 3.9 %>
+                  <yellow><h2> <%= @user.extra_three %> </h2></yellow>
+                <% end %>
+                <% if @user.extra_three >= 4.0 && @user.extra_three <= 4.9 %>
+                  <lime><h2> <%= @user.extra_three %> </h2></lime>
+                <% end %>
+                <% if @user.extra_three == 5.0 %>
+                  <green><h2> <%= @user.extra_three %> </h2></green>
+                <% end %>
+            </div>
+            <div class="form-group">
+                <% if @user.question_four == 0.0 %>
+                    <h2> <%= @user.extra_four %> </h2>
+                <% end %>
+                  <% if @user.extra_four >= 1.0 && @user.extra_four <= 1.9 %>
+                  <red><h2> <%= @user.extra_four %> </h2></red>
+                <% end %>
+                <% if @user.extra_four >= 2.0 && @user.extra_four <= 2.9 %>
+                  <orange><h2> <%= @user.extra_four %> </h2></orange>
+                <% end %>
+                <% if @user.extra_four >= 3.0 && @user.extra_four<= 3.9 %>
+                  <yellow><h2> <%= @user.extra_four %> </h2></yellow>
+                <% end %>
+                <% if @user.extra_four >= 4.0 && @user.extra_four <= 4.9 %>
+                  <lime><h2> <%= @user.extra_four %> </h2></lime>
+                <% end %>
+                <% if @user.question_one == 5.0 %>
+                  <green><h2> <%= @user.question_four %> </h2></green>
+                <% end %>
+            </div>
+            <div class="form-group">
+                <% if @user.question_five == 0.0 %>
+                    <h2> <%= @user.extra_five %> </h2>
+                <% end %>
+                  <% if @user.extra_five >= 1.0 && @user.extra_five <= 1.9 %>
+                  <red><h2> <%= @user.extra_five %> </h2></red>
+                <% end %>
+                <% if @user.extra_five >= 2.0 && @user.extra_five <= 2.9 %>
+                  <orange><h2> <%= @user.extra_five %> </h2></orange>
+                <% end %>
+                <% if @user.extra_five >= 3.0 && @user.extra_five <= 3.9 %>
+                  <yellow><h2> <%= @user.extra_five %> </h2></yellow>
+                <% end %>
+                <% if @user.extra_five >= 4.0 && @user.extra_five <= 4.9 %>
+                  <lime><h2> <%= @user.extra_five %> </h2></lime>
+                <% end %>
+                <% if @user.extra_five == 5.0 %>
+                  <green><h2> <%= @user.extra_five %> </h2></green>
+                <% end %>
             </div>
         </div>
     </div>
