@@ -310,6 +310,35 @@
     </aside>
     <% end %>
     
+    <!-- store's average for extra questions -->
+    <aside class="col-md-11 col-md-offset-2">
+      <div class="form-group">
+            <div class="form-inline">
+            <div class="form-group">
+                  <% average = User.average(:extra_one) %>
+                  <h2> <%= number_with_precision(average, :precision => 1) %> </h2>
+            </div>
+            <div class="form-group">
+                  <% average1 = User.average(:extra_two) %>
+                  <h2> <%= number_with_precision(average1, :precision => 1) %> </h2>
+            </div>
+            <div class="form-group">
+                  <% average2 = User.average(:extra_three) %>
+                  <h2> <%= number_with_precision(average2, :precision => 1) %> </h2>
+            </div>
+            <div class="form-group">
+                  <% average3 = User.average(:extra_four) %>
+                  <h2> <%= number_with_precision(average3, :precision => 1) %> </h2>
+            </div>
+            <div class="form-group">
+                  <% average4 = User.average(:extra_five) %>
+                  <h2> <%= number_with_precision(average4, :precision => 1) %> </h2>
+            </div>
+        </div>
+    </div>
+    </aside>
+    
+    
     
       <div class="col-md-10 text-center" > 
       <% if @user.role == 0 && @user == current_user %>

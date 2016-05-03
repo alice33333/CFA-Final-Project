@@ -47,30 +47,38 @@ class UsersController < ApplicationController
     # MAKE DEFAULT IN DATABASE CREATION AND TRY TO ADD USER_PARAMS
       if @user.save
         
-      @user.update_attribute :question_one, 0.0
-      @user.update_attribute :question_two, 0.0
-      @user.update_attribute :question_three, 0.0
-      @user.update_attribute :question_four, 0.0
-      @user.update_attribute :question_five, 0.0
-      @user.update_attribute :one_counter, 0
-      @user.update_attribute :two_counter, 0
-      @user.update_attribute :three_counter, 0
-      @user.update_attribute :four_counter, 0
-      @user.update_attribute :five_counter, 0
+      if @user.role == 1 || @user.role == 2 || @user.role == 3 || @user.role == 4 || @user.role == 5
+        @user.update_attribute :question_one, 0.0
+        @user.update_attribute :question_two, 0.0
+        @user.update_attribute :question_three, 0.0
+        @user.update_attribute :question_four, 0.0
+        @user.update_attribute :question_five, 0.0
+        @user.update_attribute :one_counter, 0
+        @user.update_attribute :two_counter, 0
+        @user.update_attribute :three_counter, 0
+        @user.update_attribute :four_counter, 0
+        @user.update_attribute :five_counter, 0
+        
+        @user.update_attribute :extra_one, 0.0
+        @user.update_attribute :extra_two, 0.0
+        @user.update_attribute :extra_three, 0.0
+        @user.update_attribute :extra_four, 0.0
+        @user.update_attribute :extra_five, 0.0
+        @user.update_attribute :extra_one_counter, 0
+        @user.update_attribute :extra_two_counter, 0
+        @user.update_attribute :extra_three_counter, 0
+        @user.update_attribute :extra_four_counter, 0
+        @user.update_attribute :extra_five_counter, 0
+      end
       
-      @user.update_attribute :extra_one, 0.0
-      @user.update_attribute :extra_two, 0.0
-      @user.update_attribute :extra_three, 0.0
-      @user.update_attribute :extra_four, 0.0
-      @user.update_attribute :extra_five, 0.0
-      @user.update_attribute :extra_one_counter, 0
-      @user.update_attribute :extra_two_counter, 0
-      @user.update_attribute :extra_three_counter, 0
-      @user.update_attribute :extra_four_counter, 0
-      @user.update_attribute :extra_five_counter, 0
         
         if @user.role == 0 
           @user.update_attribute :admin, true
+          @user.update_attribute :extra_one, nil
+          @user.update_attribute :extra_two, nil
+          @user.update_attribute :extra_three, nil
+          @user.update_attribute :extra_four, nil
+          @user.update_attribute :extra_five, nil
         end
         if @user.role == 4 || @user.role == 5
           @user.update_attribute :leader, true
