@@ -37,6 +37,8 @@
             <div class="form-inline">
             <div class="form-group">
                   <h6> H </h6>
+                  
+                  <a title="Hunger for Wisdom: You strive to know more about your career"> <%= image_tag("info_two.png", :alt => "rss feed")%>    </a>
             </div>
             <div class="form-group">
                   <h6> E </h6>
@@ -195,7 +197,7 @@
       <div class="form-group">
             <div class="form-inline">
             <div class="form-group">
-                  <h6> Questions </h6>
+                  <h11> Questions </h11>
             </div>
         </div>
     </div>
@@ -358,6 +360,14 @@
       <% end %>
        </div>
     </section>
+    
+    
+    <h2><%= simple_format( @user.comment_one) %></h2>
+    <h2><%= simple_format( @user.comment_two) %></h2>
+    
+    
+    
   </aside>
+  
   
 </div>

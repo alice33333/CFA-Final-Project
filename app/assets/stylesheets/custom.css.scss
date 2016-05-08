@@ -131,6 +131,26 @@ h10 {
   color: #E5173F;
 }
 
+h11 {
+  font-size: 3.5em;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+  text-align: center;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;

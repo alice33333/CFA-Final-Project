@@ -543,7 +543,7 @@ class UsersController < ApplicationController
                                    :extra_two, :extra_two_counter, :current_extra_two,
                                    :extra_three, :extra_three_counter, :current_extra_three,
                                    :extra_four, :extra_four_counter, :current_extra_four,
-                                   :extra_five, :extra_five_counter, :current_extra_five)
+                                   :extra_five, :extra_five_counter, :current_extra_five, :comment_one, :comment_two)
   end
   
   def user_question_params

@@ -1,6 +1,10 @@
 
 Rails.application.routes.draw do
   
+  resources :comments
+  resources :comments
+  resources :comments
+  
   get 'sessions/new'
 
   get 'users/new'
