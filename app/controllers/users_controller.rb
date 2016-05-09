@@ -518,7 +518,7 @@ class UsersController < ApplicationController
          @user.update_attribute :admin, false
          @user.update_attribute :leader, false
       end
-         redirect_to :back
+        redirect_to :back
     else
       render 'edit'
     end
@@ -543,7 +543,11 @@ class UsersController < ApplicationController
                                    :extra_two, :extra_two_counter, :current_extra_two,
                                    :extra_three, :extra_three_counter, :current_extra_three,
                                    :extra_four, :extra_four_counter, :current_extra_four,
-                                   :extra_five, :extra_five_counter, :current_extra_five, :comment_one, :comment_two)
+                                   :extra_five, :extra_five_counter, :current_extra_five, :comment_one, :comment_two, :comment_three,
+                                   :comment_four, :comment_five, :comment_six, :comment_seven, :comment_eight, :comment_nine, :comment_ten,
+                                   :comment_eleven, :comment_twelve, :comment_thirteen, :comment_fourteen, :comment_fifteen, :comment_sixteen,
+                                   :comment_seventeen, :comment_eighteen, :comment_nineteen, :comment_twenty, :comment_twenty_one, :comment_twenty_two, 
+                                   :comment_twenty_three, :comment_twenty_four, :comment_twenty_five)
   end
   
   def user_question_params

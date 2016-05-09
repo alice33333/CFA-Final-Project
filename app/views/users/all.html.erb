@@ -523,23 +523,63 @@
                <div class="form-inline">
                <div class="col-md-8" > 
                
-                <% if user.comment_one == nil %>
-               <%= f.text_area :comment_one, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% if user.comment_one == nil || user.comment_one == "" %>
+                   <%= f.text_area :comment_one, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_one != nil  && user.comment_two == nil || user.comment_two == "" %>
+                    <%= f.text_area :comment_two, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_two != nil && user.comment_three == nil || user.comment_three == "" %>
+                    <%= f.text_area :comment_three, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_three != nil && user.comment_four == nil || user.comment_four == "" %>
+                    <%= f.text_area :comment_four, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_four != nil && user.comment_five == nil || user.comment_five == "" %>
+                    <%= f.text_area :comment_five, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_five != nil && user.comment_six == nil || user.comment_six == "" %>
+                    <%= f.text_area :comment_six, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_six != nil && user.comment_seven == nil || user.comment_seven == "" %>
+                    <%= f.text_area :comment_seven, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_seven != nil && user.comment_eight == nil || user.comment_eight == "" %>
+                    <%= f.text_area :comment_eight, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_eight != nil && user.comment_nine == nil || user.comment_nine == "" %>
+                    <%= f.text_area :comment_nine, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_nine != nil && user.comment_ten == nil || user.comment_ten == "" %>
+                    <%= f.text_area :comment_ten, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_ten != nil && user.comment_eleven == nil || user.comment_eleven == "" %>
+                    <%= f.text_area :comment_eleven, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_eleven != nil && user.comment_twelve == nil || user.comment_twelve == "" %>
+                    <%= f.text_area :comment_twelve, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_twelve != nil && user.comment_thirteen == nil || user.comment_thirteen == "" %>
+                    <%= f.text_area :comment_thirteen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_thirteen != nil && user.comment_fourteen == nil || user.comment_fourteen == "" %>
+                    <%= f.text_area :comment_fourteen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_fourteen != nil && user.comment_fifteen == nil || user.comment_fifteen == "" %>
+                    <%= f.text_area :comment_fifteen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_fifteen != nil && user.comment_sixteen == nil || user.comment_sixteen == "" %>
+                    <%= f.text_area :comment_sixteen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_sixteen != nil && user.comment_seventeen == nil || user.comment_seventeen == "" %>
+                    <%= f.text_area :comment_seventeen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_seventeen != nil && user.comment_eighteen == nil || user.comment_eighteen == "" %>
+                    <%= f.text_area :comment_eighteen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_eighteen != nil && user.comment_ninenteen == nil || user.comment_nineteen == "" %>
+                    <%= f.text_area :comment_nineteen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_nineteen != nil && user.comment_twenty == nil || user.comment_twenty == "" %>
+                    <%= f.text_area :comment_twenty, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_twenty != nil && user.comment_twenty_one == nil || user.comment_twenty_one == "" %>
+                    <%= f.text_area :comment_twenty_one, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_twenty_one != nil && user.comment_twenty_two == nil || user.comment_twenty_two == "" %>
+                    <%= f.text_area :comment_twenty_two, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_twenty_two != nil && user.comment_twenty_three == nil || user.comment_twenty_three == "" %>
+                    <%= f.text_area :comment_twenty_three, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_twenty_three != nil && user.comment_twenty_four == nil || user.comment_twenty_four == "" %>
+                    <%= f.text_area :comment_twenty_four, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
+                <% elsif user.comment_twenty_four != nil && user.comment_twenty_five == nil || user.comment_twenty_five == "" %>
+                    <%= f.text_area :comment_twenty_five, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
                 <% end %>
-
-                 <% if user.comment_one != nil %>
-                 <%= f.text_area :comment_two, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
-                  <% end %>
     </div>
-    </div>
+    
         
          <div class="col-md-3 col-md-offset-4">
       <%= f.submit "Submit Score", class: "btn btn-default" %>
-      
-      
-      
-        <% rescue ActionController::RedirectBackError %>
-        
+      </div>
         
 </div>
 </div>
