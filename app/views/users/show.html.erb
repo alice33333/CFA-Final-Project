@@ -31,10 +31,10 @@
         <% end %>
       </h5>
       
-      <h3><%= "Hover mouse over"%> <%= image_tag("info_three.png", :alt => "rss feed")%> <%="to see detailed description of each letter" %></h3>
       
-      <% if @user.role == 1 || @user.role == 2 || @user.role == 3 || @user.role == 4 || @user.role == 5 %>
-       <aside class="col-md-10 col-md-offset-2">
+      <aside class="col-md-10 col-md-offset-2">
+      </aside>
+       <aside class="col-md-10 col-md-offset-3">
       <div class="form-group">
             <div class="form-inline">
             <div class="form-group">
@@ -72,9 +72,12 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
     </div>
     </aside>
       
-      <aside class="col-md-11 col-md-offset-2">
+      <!-- For all team members not including directors -->
+      <% if @user.role == 1 || @user.role == 2 || @user.role == 3 || @user.role == 4 || @user.role == 5 %>
+      <aside class="col-md-11 col-md-offset-1">
       <div class="form-group">
             <div class="form-inline">
+              <%= image_tag("myAverage.png", :alt => "rss feed")%>
             <div class="form-group">
                 <% if @user.question_one == 0.0 %>
                     <h2> <%= @user.question_one %> </h2>
@@ -178,35 +181,125 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
         </div>
     </div>
     </aside>
+    <% end %>
     
     <!-- store's average -->
-    <aside class="col-md-11 col-md-offset-2">
+    <aside class="col-md-11 col-md-offset-1">
       <div class="form-group">
             <div class="form-inline">
+              <%= image_tag("storeAverage.png", :alt => "rss feed")%>
             <div class="form-group">
-                  <% average = User.average(:question_one) %>
+                <% average = User.average(:question_one) %>
+                <% if average == 0.0 %>
                   <h2> <%= number_with_precision(average, :precision => 1) %> </h2>
+                <% end %>
+                <% if average >= 1.0 && average <= 1.9 %>
+                  <red><h2> <%= number_with_precision(average, :precision => 1) %> </h2></red>
+                <% end %>
+                <% if average >= 2.0 && average <= 2.9 %>
+                  <orange><h2> <%= number_with_precision(average, :precision => 1) %> </h2></orange>
+                <% end %>
+                <% if average >= 3.0 && average <= 3.9 %>
+                  <yellow><h2> <%= number_with_precision(average, :precision => 1) %> </h2></yellow>
+                <% end %>
+                <% if average >= 4.0 && average <= 4.9 %>
+                  <lime><h2> <%= number_with_precision(average, :precision => 1) %> </h2></lime>
+                <% end %>
+                <% if average == 5.0 %>
+                  <green><h2> <%= number_with_precision(average, :precision => 1) %> </h2></green>
+                <% end %>
             </div>
             <div class="form-group">
-                  <% average1 = User.average(:question_two) %>
+                <% average1 = User.average(:question_two) %>
+                <% if average1 == 0.0 %>
                   <h2> <%= number_with_precision(average1, :precision => 1) %> </h2>
+                <% end %>
+                <% if average1 >= 1.0 && average1 <= 1.9 %>
+                  <red><h2> <%= number_with_precision(average1, :precision => 1) %> </h2></red>
+                <% end %>
+                <% if average1 >= 2.0 && average1 <= 2.9 %>
+                  <orange><h2> <%= number_with_precision(average1, :precision => 1) %> </h2></orange>
+                <% end %>
+                <% if average1 >= 3.0 && average1 <= 3.9 %>
+                  <yellow><h2> <%= number_with_precision(average1, :precision => 1) %> </h2></yellow>
+                <% end %>
+                <% if average1 >= 4.0 && average1 <= 4.9 %>
+                  <lime><h2> <%= number_with_precision(average1, :precision => 1) %> </h2></lime>
+                <% end %>
+                <% if average1 == 5.0 %>
+                  <green><h2> <%= number_with_precision(average1, :precision => 1) %> </h2></green>
+                <% end %>
             </div>
             <div class="form-group">
-                  <% average2 = User.average(:question_three) %>
-                  <h2> <%= number_with_precision(average2, :precision => 1) %> </h2>
+                <% average2 = User.average(:question_three) %>
+                <% if average2 == 0.0 %>
+                    <h2> <%= number_with_precision(average2, :precision => 1) %> </h2>
+                <% end %>
+                <% if average2 >= 1.0 && average2 <= 1.9 %>
+                  <red><h2> <%= number_with_precision(average2, :precision => 1) %> </h2></red>
+                <% end %>
+                <% if average2 >= 2.0 && average2 <= 2.9 %>
+                  <orange><h2> <%= number_with_precision(average2, :precision => 1) %> </h2></orange>
+                <% end %>
+                <% if average2 >= 3.0 && average2 <= 3.9 %>
+                  <yellow><h2> <%= number_with_precision(average2, :precision => 1) %> </h2></yellow>
+                <% end %>
+                <% if average2 >= 4.0 && average2 <= 4.9 %>
+                  <lime><h2> <%= number_with_precision(average2, :precision => 1) %> </h2></lime>
+                <% end %>
+                <% if average2 == 5.0 %>
+                  <green><h2> <%= number_with_precision(average2, :precision => 1) %> </h2></green>
+                <% end %>
             </div>
             <div class="form-group">
-                  <% average3 = User.average(:question_four) %>
-                  <h2> <%= number_with_precision(average3, :precision => 1) %> </h2>
+                <% average3 = User.average(:question_four) %>
+                <% if average3 == 0.0 %>
+                    <h2> <%= number_with_precision(average3, :precision => 1) %> </h2>
+                <% end %>
+                <% if average3 >= 1.0 && average3 <= 1.9 %>
+                  <red><h2> <%= number_with_precision(average3, :precision => 1) %> </h2></red>
+                <% end %>
+                <% if average3 >= 2.0 && average3 <= 2.9 %>
+                  <orange><h2> <%= number_with_precision(average3, :precision => 1) %> </h2></orange>
+                <% end %>
+                <% if average3 >= 3.0 && average3 <= 3.9 %>
+                  <yellow><h2> <%= number_with_precision(average3, :precision => 1) %> </h2></yellow>
+                <% end %>
+                <% if average3 >= 4.0 && average3 <= 4.9 %>
+                  <lime><h2> <%= number_with_precision(average3, :precision => 1) %> </h2></lime>
+                <% end %>
+                <% if average3 == 5.0 %>
+                  <green><h2> <%= number_with_precision(average3, :precision => 1) %> </h2></green>
+                <% end %>
             </div>
             <div class="form-group">
-                  <% average4 = User.average(:question_five) %>
-                  <h2> <%= number_with_precision(average4, :precision => 1) %> </h2>
+                <% average4 = User.average(:question_five) %>
+                <% if average4 == 0.0 %>
+                    <h2> <%= number_with_precision(average4, :precision => 1) %> </h2>
+                <% end %>
+                <% if average4 >= 1.0 && average4 <= 1.9 %>
+                  <red><h2> <%= number_with_precision(average4, :precision => 1) %> </h2></red>
+                <% end %>
+                <% if average4 >= 2.0 && average4 <= 2.9 %>
+                  <orange><h2> <%= number_with_precision(average4, :precision => 1) %> </h2></orange>
+                <% end %>
+                <% if average4 >= 3.0 && average4 <= 3.9 %>
+                  <yellow><h2> <%= number_with_precision(average4, :precision => 1) %> </h2></yellow>
+                <% end %>
+                <% if average4 >= 4.0 && average4 <= 4.9 %>
+                  <lime><h2> <%= number_with_precision(average4, :precision => 1) %> </h2></lime>
+                <% end %>
+                <% if average4 == 5.0 %>
+                  <green><h2> <%= number_with_precision(average4, :precision => 1) %> </h2></green>
+                <% end %>
             </div>
+            <h3><%= "Hover mouse over"%> <%= image_tag("info_three.png", :alt => "rss feed")%> <%="to see detailed description of each letter" %></h3>
+            <aside class="col-md-3 col-md-offset-2">
+            <%= image_tag("scale.png", :alt => "rss feed")%>
+            </aside>
         </div>
     </div>
     </aside>
-    <% end %>
     
      <% if @user.role == 1 || @user.role == 2 || @user.role == 3 || @user.role == 4 || @user.role == 5 %>
        <aside class="col-md-3 col-md-offset-1">
