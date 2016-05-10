@@ -190,7 +190,7 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
               <%= image_tag("storeAverage.png", :alt => "rss feed")%>
             <div class="form-group">
                 <% average = User.average(:question_one) %>
-                <% if average == 0.0 %>
+                <% if average >= 0.0 && average <= 0.9 %>
                   <h2> <%= number_with_precision(average, :precision => 1) %> </h2>
                 <% end %>
                 <% if average >= 1.0 && average <= 1.9 %>
@@ -211,7 +211,7 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             </div>
             <div class="form-group">
                 <% average1 = User.average(:question_two) %>
-                <% if average1 == 0.0 %>
+                <% if average1 >= 0.0 && average1 <= 0.9 %>
                   <h2> <%= number_with_precision(average1, :precision => 1) %> </h2>
                 <% end %>
                 <% if average1 >= 1.0 && average1 <= 1.9 %>
@@ -232,7 +232,7 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             </div>
             <div class="form-group">
                 <% average2 = User.average(:question_three) %>
-                <% if average2 == 0.0 %>
+                <% if average2 >= 0.0 && average2 <= 0.9 %>
                     <h2> <%= number_with_precision(average2, :precision => 1) %> </h2>
                 <% end %>
                 <% if average2 >= 1.0 && average2 <= 1.9 %>
@@ -253,7 +253,7 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             </div>
             <div class="form-group">
                 <% average3 = User.average(:question_four) %>
-                <% if average3 == 0.0 %>
+                <% if average3 >= 0.0 && average3 <= 0.9 %>
                     <h2> <%= number_with_precision(average3, :precision => 1) %> </h2>
                 <% end %>
                 <% if average3 >= 1.0 && average3 <= 1.9 %>
@@ -274,7 +274,7 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             </div>
             <div class="form-group">
                 <% average4 = User.average(:question_five) %>
-                <% if average4 == 0.0 %>
+                <% if average4 >= 0.0 && average4 <= 0.9  %>
                     <h2> <%= number_with_precision(average4, :precision => 1) %> </h2>
                 <% end %>
                 <% if average4 >= 1.0 && average4 <= 1.9 %>
@@ -306,17 +306,26 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
       <div class="form-group">
             <div class="form-inline">
             <div class="form-group">
-                  <h11> Questions </h11>
+                  <h11> Questions: </h11>
             </div>
         </div>
     </div>
     </aside>
     
     <!-- extra question results -->
-     <aside class="col-md-11 col-md-offset-2">
+     <aside class="col-md-11 col-md-offset-1">
       <div class="form-group">
             <div class="form-inline">
+              <% if @user.role == 1  || @user.role == 4 %>
+                <h4> Communicating respectively to Guests and Team Members </h4>
+              <% end %>
+              
+              <% if @user.role == 2  || @user.role == 5 %>
+                <h4> Following Proper Policies & Procedures </h4>
+                <h4> - i.e. Uniform, LEAN, Timers, Cell Phones </h4>
+              <% end %>
             <div class="form-group">
+               <%= image_tag("myAverage.png", :alt => "rss feed")%>
                 <% if @user.extra_one == 0.0 %>
                     <h2> <%= @user.extra_one %> </h2>
                 <% end %>
@@ -337,6 +346,16 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <% end %>
             </div>
             <div class="form-group">
+              <% if @user.role == 1  || @user.role == 4 %>
+                <h4> Following Proper Policies & Procedures - i.e. Uniforms, </h4>
+                <h4> Portioning, Sauces, Cell Phones </h4>
+              <% end %>
+              
+               <% if @user.role == 2  || @user.role == 5 %>
+                <h4> Communicating respectively to Guests and Team Members </h4>
+              <% end %>
+              <div class="form-group">
+               <%= image_tag("myAverage.png", :alt => "rss feed")%>
                 <% if @user.extra_two == 0.0 %>
                     <h2> <%= @user.extra_two %> </h2>
                 <% end %>
@@ -357,6 +376,16 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <% end %>
             </div>
             <div class="form-group">
+               <% if @user.role == 1  || @user.role == 4 %>
+                <h4> Attendance & Punctuality </h4>
+              <% end %>
+              
+              <% if @user.role == 2  || @user.role == 5 %>
+                <h4> Knowing & Adhering to Food Safety Procedures </h4>
+                <h4> - i.e. changing gloves, washing hands </h4>
+              <% end %>
+              <div class="form-group">
+               <%= image_tag("myAverage.png", :alt => "rss feed")%>
                 <% if @user.extra_three == 0.0 %>
                     <h2> <%= @user.extra_three %> </h2>
                 <% end %>
@@ -377,6 +406,15 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <% end %>
             </div>
             <div class="form-group">
+              <% if @user.role == 1  || @user.role == 4 %>
+                <h4> Going above & beyond for guests - Second Mile Service </h4>
+              <% end %>
+              
+              <% if @user.role == 2  || @user.role == 5 %>
+                <h4> Attendance & Punctuality </h4>
+              <% end %>
+              <div class="form-group">
+               <%= image_tag("myAverage.png", :alt => "rss feed")%>
                 <% if @user.question_four == 0.0 %>
                     <h2> <%= @user.extra_four %> </h2>
                 <% end %>
@@ -397,6 +435,15 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <% end %>
             </div>
             <div class="form-group">
+               <% if @user.role == 1  || @user.role == 4 %>
+                <h4> Knowing & Following Store Non-negotiables </h4>
+              <% end %>
+              
+               <% if @user.role == 2  || @user.role == 5 %>
+                <h4> Knowing & Following Store Non-negotiables </h4>
+              <% end %>
+              <div class="form-group">
+               <%= image_tag("myAverage.png", :alt => "rss feed")%>
                 <% if @user.question_five == 0.0 %>
                     <h2> <%= @user.extra_five %> </h2>
                 <% end %>
@@ -415,6 +462,12 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <% if @user.extra_five == 5.0 %>
                   <green><h2> <%= @user.extra_five %> </h2></green>
                 <% end %>
+            </div>
+            <div class="form-group">
+              <% if @user.role == 1  || @user.role == 2 || @user.role == 3 || @user.role == 4 || @user.role == 5 %>
+                <h4> Going above & beyond for guests - Second Mile Service </h4>
+              <% end %>
+              <div class="form-group">
             </div>
         </div>
     </div>
