@@ -42,7 +42,8 @@ class UsersController < ApplicationController
   end
   
   def faverage
-    @array = [1,2,3]
+    @array = []
+    @users = User.all
   end
   
   def baverage

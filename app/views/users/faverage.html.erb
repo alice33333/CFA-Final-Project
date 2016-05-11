@@ -1,5 +1,11 @@
 <% provide(:title, 'Front of House Averages') %>
 <h2>Front of House Averages</h2>
-<% @array.each do |a| %>
-<h2><%= a %> </h2>
+
+    <% @users.each do |user| %>
+        <% if user.role == 1 %>
+        <% @array.push(user) %>
+        <% end %>
+    <% end %>
+    <% @array.each do |a| %>
+<h2><%= a.name.to_s %> </h2>
 <% end %> 
