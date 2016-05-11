@@ -41,6 +41,13 @@ class UsersController < ApplicationController
     @users = User.order("name").where.not(:role => 0).page(params[:page]).per(1)
   end
   
+  def faverage
+    @array = [1,2,3]
+  end
+  
+  def baverage
+  end
+  
   def create
     @user = User.new(user_params)
     
