@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$('a[data-popup]').on('click', function(e) { window.open($(this).attr('href')); e.preventDefault(); });
