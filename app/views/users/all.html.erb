@@ -2,6 +2,8 @@
 <br> </br>
 
 <% @users.each do |user| %>
+
+<% i = 0 %>
     
     <h4> <%= user.name %> </h4>
     <h3> Do you have HEART?</h3>
@@ -585,11 +587,22 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <% elsif user.comment_twenty_four != nil && user.comment_twenty_five == nil || user.comment_twenty_five == "" %>
                     <%= f.text_area :comment_twenty_five, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
                 <% end %>
+                
+                
     </div>
     
         
          <div class="col-md-3 col-md-offset-4">
       <%= f.submit "Submit Score", class: "btn btn-default" %>
+    
+    <% if user.current_one == 2 %>
+   <script type="text/javascript">
+  window.location.href="?page=<%=@users.current_page+1 %>"
+  </script>
+  <% end %>
+    
+  
+
       </div>
         
 </div>
