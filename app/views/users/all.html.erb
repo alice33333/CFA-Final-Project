@@ -1,9 +1,11 @@
 <h2>Team Member Evaluation</h2>
 <br> </br>
 
+
+
 <% @users.each do |user| %>
 
-<% i = 0 %>
+
     
     <h4> <%= user.name %> </h4>
     <h3> Do you have HEART?</h3>
@@ -590,29 +592,29 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 
                 
     </div>
-    
-        
          <div class="col-md-3 col-md-offset-4">
-      <%= f.submit "Submit Score", class: "btn btn-default" %>
-    
-    <% if user.current_one == 2 %>
-   <script type="text/javascript">
+   <%= f.submit "Submit Score", name: 'a_button', class: "btn btn-default" %>
+    <script type="text/javascript">
   window.location.href="?page=<%=@users.current_page+1 %>"
   </script>
-  <% end %>
     
-  
 
       </div>
-        
 </div>
 </div>
 
    
     <% end %>
     
+  
+    
     <%= paginate @users %>
    
+   
+   
    <% end %>
+   
+   
+      
    
 <% end %>
