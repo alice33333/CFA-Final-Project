@@ -12,7 +12,6 @@
     
     <%= form_for(user) do |f| %>
     <% begin %>
-        
         <h3><%= "Hover mouse over"%> <%= image_tag("info_three.png", :alt => "rss feed")%> <%="to see detailed description of each letter" %></h3>
         <h8> Hunger for Wisdom </h8>
          <a title="Hunger for Wisdom:
@@ -21,6 +20,7 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             <div class="form-group">
                  <%= f.radio_button :current_one, 1 %>
                  <h7> 1 </h7>
+                 
             </div>
             <div class="form-group">
                  <%= f.radio_button :current_one, 2 %>
@@ -593,28 +593,18 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 
     </div>
          <div class="col-md-3 col-md-offset-4">
-   <%= f.submit "Submit Score", name: 'a_button', class: "btn btn-default" %>
+   <%= f.submit "Submit Score", class: "btn btn-default" %>
+   
+   <% if @result %>
     <script type="text/javascript">
   window.location.href="?page=<%=@users.current_page+1 %>"
   </script>
-    
+    <% end %>
 
       </div>
 </div>
 </div>
-
-   
     <% end %>
-    
-  
-    
     <%= paginate @users %>
-   
-   
-   
    <% end %>
-   
-   
-      
-   
 <% end %>

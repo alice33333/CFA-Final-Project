@@ -43,10 +43,20 @@ class UsersController < ApplicationController
   
   def faverage
     @array = []
+    @array2 = []
+    @array3 = []
+    @array4 = []
+    @array5 = []
     @users = User.all
   end
   
   def baverage
+    @array = []
+    @array2 = []
+    @array3 = []
+    @array4 = []
+    @array5 = []
+    @users = User.all
   end
   
   def create
@@ -504,6 +514,9 @@ class UsersController < ApplicationController
           @user.update_attribute :extra_five, average9
           #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
       end
+      
+      overall = ((@user.question_one + @user.question_two + @user.question_three + @user.question_four + @user.question_five) / 5)
+      @user.update_attribute :overall, overall
   
   # ADD ADMIN AND SECOND_TIER UPDATES HERE
       if @user.role == 0 
@@ -557,7 +570,7 @@ class UsersController < ApplicationController
                                    :comment_four, :comment_five, :comment_six, :comment_seven, :comment_eight, :comment_nine, :comment_ten,
                                    :comment_eleven, :comment_twelve, :comment_thirteen, :comment_fourteen, :comment_fifteen, :comment_sixteen,
                                    :comment_seventeen, :comment_eighteen, :comment_nineteen, :comment_twenty, :comment_twenty_one, :comment_twenty_two, 
-                                   :comment_twenty_three, :comment_twenty_four, :comment_twenty_five)
+                                   :comment_twenty_three, :comment_twenty_four, :comment_twenty_five, :overall)
   end
   
   def user_question_params
