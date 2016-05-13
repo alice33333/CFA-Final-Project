@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @users = User.all
   end
 
   def new
@@ -128,7 +129,9 @@ class UsersController < ApplicationController
     average = 0
     
     if @user.update_attributes(user_params)
+      @user.update_attribute :flag, true
       flash[:success] = "Profile updated"
+      
       
       # QUESTION ONE: HUNGER FOR WISDOM
       if @user.current_one == 1 
