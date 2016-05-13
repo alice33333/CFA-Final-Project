@@ -319,19 +319,18 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
     </aside>
     
     <!-- extra question results -->
-     <aside class="col-md-11 col-md-offset-1">
+     <aside class="col-md-9 col-md-offset-1">
       <div class="form-group">
-            <div class="form-inline">
               <% if @user.role == 1  || @user.role == 4 %>
-                <h4> Communicating respectively to Guests and Team Members </h4>
+                <h3> Communicating respectively to Guests and Team Members </h3>
               <% end %>
               
               <% if @user.role == 2  || @user.role == 5 %>
-                <h4> Following Proper Policies & Procedures </h4>
-                <h4> - i.e. Uniform, LEAN, Timers, Cell Phones </h4>
+                <h3> Following Proper Policies & Procedures </h3>
+                <h3> - i.e. Uniform, LEAN, Timers, Cell Phones </h3>
               <% end %>
-            <div class="form-group">
-               <%= image_tag("myAverage.png", :alt => "rss feed")%>
+               <!--<%= image_tag("myAverage.png", :alt => "rss feed")%>-->
+               <h3> My Average: </h3>
                 <% if @user.extra_one == 0.0 %>
                     <h2> <%= @user.extra_one %> </h2>
                 <% end %>
@@ -353,12 +352,12 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             </div>
             <div class="form-group">
               <% if @user.role == 1  || @user.role == 4 %>
-                <h4> Following Proper Policies & Procedures - i.e. Uniforms, </h4>
-                <h4> Portioning, Sauces, Cell Phones </h4>
+                <h3> Following Proper Policies & Procedures - i.e. Uniforms, </h3>
+                <h3> Portioning, Sauces, Cell Phones </h3>
               <% end %>
               
                <% if @user.role == 2  || @user.role == 5 %>
-                <h4> Communicating respectively to Guests and Team Members </h4>
+                <h3> Communicating respectively to Guests and Team Members </h3>
               <% end %>
               <div class="form-group">
                <%= image_tag("myAverage.png", :alt => "rss feed")%>
@@ -383,12 +382,12 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             </div>
             <div class="form-group">
                <% if @user.role == 1  || @user.role == 4 %>
-                <h4> Attendance & Punctuality </h4>
+                <h3> Attendance & Punctuality </h3>
               <% end %>
               
               <% if @user.role == 2  || @user.role == 5 %>
-                <h4> Knowing & Adhering to Food Safety Procedures </h4>
-                <h4> - i.e. changing gloves, washing hands </h4>
+                <h3> Knowing & Adhering to Food Safety Procedures </h3>
+                <h3> - i.e. changing gloves, washing hands </h3>
               <% end %>
               <div class="form-group">
                <%= image_tag("myAverage.png", :alt => "rss feed")%>
@@ -413,11 +412,11 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             </div>
             <div class="form-group">
               <% if @user.role == 1  || @user.role == 4 %>
-                <h4> Going above & beyond for guests - Second Mile Service </h4>
+                <h3> Going above & beyond for guests - Second Mile Service </h3>
               <% end %>
               
               <% if @user.role == 2  || @user.role == 5 %>
-                <h4> Attendance & Punctuality </h4>
+                <h3> Attendance & Punctuality </h3>
               <% end %>
               <div class="form-group">
                <%= image_tag("myAverage.png", :alt => "rss feed")%>
@@ -442,11 +441,11 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             </div>
             <div class="form-group">
                <% if @user.role == 1  || @user.role == 4 %>
-                <h4> Knowing & Following Store Non-negotiables </h4>
+                <h3> Knowing & Following Store Non-negotiables </h3>
               <% end %>
               
                <% if @user.role == 2  || @user.role == 5 %>
-                <h4> Knowing & Following Store Non-negotiables </h4>
+                <h3> Knowing & Following Store Non-negotiables </h3>
               <% end %>
               <div class="form-group">
                <%= image_tag("myAverage.png", :alt => "rss feed")%>
@@ -470,45 +469,40 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <% end %>
             </div>
             <div class="form-group">
-              <% if @user.role == 1  || @user.role == 2 || @user.role == 3 || @user.role == 4 || @user.role == 5 %>
-                <h4> Going above & beyond for guests - Second Mile Service </h4>
-              <% end %>
-              <div class="form-group">
-            </div>
         </div>
     </div>
     </aside>
     <% end %>
     
     <!-- store's average for extra questions -->
-    <aside class="col-md-11 col-md-offset-2">
-      <div class="form-group">
-            <div class="form-inline">
-            <div class="form-group">
-                  <% average = User.average(:extra_one) %>
-                  <h2> <%= number_with_precision(average, :precision => 1) %> </h2>
-            </div>
-            <div class="form-group">
-                  <% average1 = User.average(:extra_two) %>
-                  <h2> <%= number_with_precision(average1, :precision => 1) %> </h2>
-            </div>
-            <div class="form-group">
-                  <% average2 = User.average(:extra_three) %>
-                  <h2> <%= number_with_precision(average2, :precision => 1) %> </h2>
-            </div>
-            <div class="form-group">
-                  <% average3 = User.average(:extra_four) %>
-                  <h2> <%= number_with_precision(average3, :precision => 1) %> </h2>
-            </div>
-            <div class="form-group">
-                  <% average4 = User.average(:extra_five) %>
-                  <h2> <%= number_with_precision(average4, :precision => 1) %> </h2>
-            </div>
-        </div>
-    </div>
-    </aside>
+    <!--<aside class="col-md-11 col-md-offset-2">-->
+    <!--  <div class="form-group">-->
+    <!--        <div class="form-inline">-->
+    <!--        <div class="form-group">-->
+    <!--              <% average = User.average(:extra_one) %>-->
+    <!--              <h2> <%= number_with_precision(average, :precision => 1) %> </h2>-->
+    <!--        </div>-->
+    <!--        <div class="form-group">-->
+    <!--              <% average1 = User.average(:extra_two) %>-->
+    <!--              <h2> <%= number_with_precision(average1, :precision => 1) %> </h2>-->
+    <!--        </div>-->
+    <!--        <div class="form-group">-->
+    <!--              <% average2 = User.average(:extra_three) %>-->
+    <!--              <h2> <%= number_with_precision(average2, :precision => 1) %> </h2>-->
+    <!--        </div>-->
+    <!--        <div class="form-group">-->
+    <!--              <% average3 = User.average(:extra_four) %>-->
+    <!--              <h2> <%= number_with_precision(average3, :precision => 1) %> </h2>-->
+    <!--        </div>-->
+    <!--        <div class="form-group">-->
+    <!--              <% average4 = User.average(:extra_five) %>-->
+    <!--              <h2> <%= number_with_precision(average4, :precision => 1) %> </h2>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
+    <!--</aside>-->
     
-    
+   
     
       <div class="col-md-10 text-center" > 
       <% if @user.role == 0 && @user == current_user %>
@@ -532,6 +526,29 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
     
     <h2><%= simple_format( @user.comment_one) %></h2>
     <h2><%= simple_format( @user.comment_two) %></h2>
+    <h2><%= simple_format( @user.comment_three) %></h2>
+    <h2><%= simple_format( @user.comment_four) %></h2>
+    <h2><%= simple_format( @user.comment_five) %></h2>
+    <h2><%= simple_format( @user.comment_six) %></h2>
+    <h2><%= simple_format( @user.comment_seven) %></h2>
+    <h2><%= simple_format( @user.comment_eight) %></h2>
+    <h2><%= simple_format( @user.comment_nine) %></h2>
+    <h2><%= simple_format( @user.comment_ten) %></h2>
+    <h2><%= simple_format( @user.comment_eleven) %></h2>
+    <h2><%= simple_format( @user.comment_twelve) %></h2>
+    <h2><%= simple_format( @user.comment_thirteen) %></h2>
+    <h2><%= simple_format( @user.comment_fourteen) %></h2>
+    <h2><%= simple_format( @user.comment_fifteen) %></h2>
+    <h2><%= simple_format( @user.comment_sixteen) %></h2>
+    <h2><%= simple_format( @user.comment_seventeen) %></h2>
+    <h2><%= simple_format( @user.comment_eighteen) %></h2>
+    <h2><%= simple_format( @user.comment_nineteen) %></h2>
+    <h2><%= simple_format( @user.comment_twenty) %></h2>
+    <h2><%= simple_format( @user.comment_twenty_one) %></h2>
+    <h2><%= simple_format( @user.comment_twenty_two) %></h2>
+    <h2><%= simple_format( @user.comment_twenty_three) %></h2>
+    <h2><%= simple_format( @user.comment_twenty_four) %></h2>
+    <h2><%= simple_format( @user.comment_twenty_five) %></h2>
     
     
     
