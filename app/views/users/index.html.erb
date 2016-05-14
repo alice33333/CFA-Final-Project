@@ -5,18 +5,19 @@
 <ul class="users">
   <% @users.each do |user| %>
     <li>
-     <h3> <%= link_to user.name, user %> </h3>
-      <%= link_to "Edit", edit_user_path(user) %>
-      <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "Delete", user, method: :delete,
-                                  data: { confirm: "Are you sure you would like to delete this employee?" } %>
+     <h13> <%= link_to user.name, user %> </h13>
+     <h13> <%= link_to "Edit", edit_user_path(user) %> </h13>
+      <% if current_user.admin? && !current_user?(user) %> 
+    |<h13> <%= link_to "Delete", user, method: :delete,
+                                  data: { confirm: "Are you sure you would like to delete this employee?" } %> </h13>
   <% end %>
       <% if user.role == 0 %>
+      
           <p>Director</p>
-        <% end %>
+        <% end %> 
         <% if user.role == 1 %>
-          <p>Front of House Team Member</p>
-        <% end %>
+        <p><%= "Front of House Team Member" %></p>
+        <% end %> 
         <% if user.role == 2 %>
           <p>Back of House Team Member</p>
         <% end %>

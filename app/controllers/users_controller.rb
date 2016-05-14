@@ -60,6 +60,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
   
+  def reset
+  end
+  
   def create
     @user = User.new(user_params)
     

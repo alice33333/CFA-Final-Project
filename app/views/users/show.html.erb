@@ -330,7 +330,7 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <h3> - i.e. Uniform, LEAN, Timers, Cell Phones </h3>
               <% end %>
                <!--<%= image_tag("myAverage.png", :alt => "rss feed")%>-->
-               <h3> My Average: </h3>
+               <h15> My Average: </h15>
                 <% if @user.extra_one == 0.0 %>
                     <h2> <%= @user.extra_one %> </h2>
                 <% end %>
@@ -360,7 +360,8 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <h3> Communicating respectively to Guests and Team Members </h3>
               <% end %>
               <div class="form-group">
-               <%= image_tag("myAverage.png", :alt => "rss feed")%>
+               <!--<%= image_tag("myAverage.png", :alt => "rss feed")%>-->
+               <h15> My Average: </h15>
                 <% if @user.extra_two == 0.0 %>
                     <h2> <%= @user.extra_two %> </h2>
                 <% end %>
@@ -390,7 +391,8 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <h3> - i.e. changing gloves, washing hands </h3>
               <% end %>
               <div class="form-group">
-               <%= image_tag("myAverage.png", :alt => "rss feed")%>
+               <!--<%= image_tag("myAverage.png", :alt => "rss feed")%>-->
+               <h15> My Average: </h15>
                 <% if @user.extra_three == 0.0 %>
                     <h2> <%= @user.extra_three %> </h2>
                 <% end %>
@@ -419,7 +421,8 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <h3> Attendance & Punctuality </h3>
               <% end %>
               <div class="form-group">
-               <%= image_tag("myAverage.png", :alt => "rss feed")%>
+               <!--<%= image_tag("myAverage.png", :alt => "rss feed")%>-->
+               <h15> My Average: </h15>
                 <% if @user.question_four == 0.0 %>
                     <h2> <%= @user.extra_four %> </h2>
                 <% end %>
@@ -448,7 +451,8 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <h3> Knowing & Following Store Non-negotiables </h3>
               <% end %>
               <div class="form-group">
-               <%= image_tag("myAverage.png", :alt => "rss feed")%>
+               <!--<%= image_tag("myAverage.png", :alt => "rss feed")%>-->
+               <h15> My Average: </h15>
                 <% if @user.question_five == 0.0 %>
                     <h2> <%= @user.extra_five %> </h2>
                 <% end %>
@@ -523,35 +527,36 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
        </div>
     </section>
     
-    
-    <h2><%= simple_format( @user.comment_one) %></h2>
-    <h2><%= simple_format( @user.comment_two) %></h2>
-    <h2><%= simple_format( @user.comment_three) %></h2>
-    <h2><%= simple_format( @user.comment_four) %></h2>
-    <h2><%= simple_format( @user.comment_five) %></h2>
-    <h2><%= simple_format( @user.comment_six) %></h2>
-    <h2><%= simple_format( @user.comment_seven) %></h2>
-    <h2><%= simple_format( @user.comment_eight) %></h2>
-    <h2><%= simple_format( @user.comment_nine) %></h2>
-    <h2><%= simple_format( @user.comment_ten) %></h2>
-    <h2><%= simple_format( @user.comment_eleven) %></h2>
-    <h2><%= simple_format( @user.comment_twelve) %></h2>
-    <h2><%= simple_format( @user.comment_thirteen) %></h2>
-    <h2><%= simple_format( @user.comment_fourteen) %></h2>
-    <h2><%= simple_format( @user.comment_fifteen) %></h2>
-    <h2><%= simple_format( @user.comment_sixteen) %></h2>
-    <h2><%= simple_format( @user.comment_seventeen) %></h2>
-    <h2><%= simple_format( @user.comment_eighteen) %></h2>
-    <h2><%= simple_format( @user.comment_nineteen) %></h2>
-    <h2><%= simple_format( @user.comment_twenty) %></h2>
-    <h2><%= simple_format( @user.comment_twenty_one) %></h2>
-    <h2><%= simple_format( @user.comment_twenty_two) %></h2>
-    <h2><%= simple_format( @user.comment_twenty_three) %></h2>
-    <h2><%= simple_format( @user.comment_twenty_four) %></h2>
-    <h2><%= simple_format( @user.comment_twenty_five) %></h2>
-    
-    
-    
+    <% if @user.role == 1 || @user.role == 2 || @user.role == 3 || @user.role == 4 || @user.role == 5 %>
+     <aside class="col-md-11 col-md-offset-1"> 
+    <h14><%= "Comments:" %></h14>
+    <h13><%= simple_format( @user.comment_one) %></h13>
+    <h13><%= simple_format( @user.comment_two) %></h13>
+    <h13><%= simple_format( @user.comment_three) %></h13>
+    <h13><%= simple_format( @user.comment_four) %></h13>
+    <h13><%= simple_format( @user.comment_five) %></h13>
+    <h13><%= simple_format( @user.comment_six) %></h13>
+    <h13><%= simple_format( @user.comment_seven) %></h13>
+    <h13><%= simple_format( @user.comment_eight) %></h13>
+    <h13><%= simple_format( @user.comment_nine) %></h13>
+    <h13><%= simple_format( @user.comment_ten) %></h13>
+    <h13><%= simple_format( @user.comment_eleven) %></h13>
+    <h13><%= simple_format( @user.comment_twelve) %></h13>
+    <h13><%= simple_format( @user.comment_thirteen) %></h13>
+    <h13><%= simple_format( @user.comment_fourteen) %></h13>
+    <h13><%= simple_format( @user.comment_fifteen) %></h13>
+    <h13><%= simple_format( @user.comment_sixteen) %></h13>
+    <h13><%= simple_format( @user.comment_seventeen) %></h13>
+    <h13><%= simple_format( @user.comment_eighteen) %></h13>
+    <h13><%= simple_format( @user.comment_nineteen) %></h13>
+    <h13><%= simple_format( @user.comment_twenty) %></h13>
+    <h13><%= simple_format( @user.comment_twenty_one) %></h13>
+    <h13><%= simple_format( @user.comment_twenty_two) %></h13>
+    <h13><%= simple_format( @user.comment_twenty_three) %></h13>
+    <h13><%= simple_format( @user.comment_twenty_four) %></h13>
+    <h13><%= simple_format( @user.comment_twenty_five) %></h13>
+    <% end %>
+  </aside>  
   </aside>
   
   

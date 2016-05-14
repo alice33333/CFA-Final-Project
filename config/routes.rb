@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'create' => 'users#new'
   get 'average' => 'users#faverage'
   get 'score' => 'users#baverage'
+  get 'reset' => 'users#reset'
 
   # for logging in
   get    'login'   => 'sessions#new'
