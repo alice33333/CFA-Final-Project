@@ -1,12 +1,8 @@
 <h2>Team Member Evaluation</h2>
 <br> </br>
 
-
-
 <% @users.each do |user| %>
 
-    
-    
     <h4> <%= user.name %> </h4>
     <h3> Do you have HEART?</h3>
     
@@ -16,12 +12,11 @@
         <h3><%= "Hover mouse over"%> <%= image_tag("info_three.png", :alt => "rss feed")%> <%="to see detailed description of each letter" %></h3>
         <h8> Hunger for Wisdom </h8>
          <a title="Hunger for Wisdom:
-You strive to know more about your career"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
+Do they continue to learn and expand their knowledge?"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
             <div class="form-group">
                  <%= f.radio_button :current_one, 1 %>
                  <h7> 1 </h7>
-                 
             </div>
             <div class="form-group">
                  <%= f.radio_button :current_one, 2 %>
@@ -43,8 +38,8 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
     
         
         <h8> Expect the Best </h8>
-         <a title="Hunger for Wisdom:
-You strive to know more about your career"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
+         <a title="Expect the Best:
+Are they a role model living up to our standards or do they try to cut corners?"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
             <div class="form-group">
                  <%= f.radio_button :current_two, 1 %>
@@ -69,8 +64,9 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             </div>
             
         <h8> Accept Responsibility </h8>
-         <a title="Hunger for Wisdom:
-You strive to know more about your career"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
+         <a title="Accept Responsibility:
+When they made a mistake, do they own up to
+it and grow from the experience?"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
             <div class="form-group">
                  <%= f.radio_button :current_three, 1 %>
@@ -95,8 +91,8 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             </div>
             
         <h8> Respond with Courage </h8>
-         <a title="Hunger for Wisdom:
-You strive to know more about your career"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
+         <a title="Respond with Courage:
+Do they do the right thing even when it’s not easy?"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
             <div class="form-group">
                  <%= f.radio_button :current_four, 1 %>
@@ -121,8 +117,9 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
             </div>
             
         <h8> Think others first </h8>
-         <a title="Hunger for Wisdom:
-You strive to know more about your career"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
+         <a title="Think others first:
+Do they think of their fellow team members and how they can help them 
+before they think of what’s easiest for them?"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
             <div class="form-group">
                  <%= f.radio_button :current_five, 1 %>
@@ -602,9 +599,6 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
   window.location.href="?page=<%=@users.current_page+1 %>"
   </script>
     <% end %>
-    
-    
-
       </div>
 </div>
 </div>

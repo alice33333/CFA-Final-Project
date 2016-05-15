@@ -22,14 +22,13 @@ class UsersController < ApplicationController
   
   # Back of House evaluation form (for BOH shift leaders)
   def back
-    @users = User.order("name").where(:role => 2).page(params[:page]).per(1)
-    @users = User.order("name").where(:role => 5).page(params[:page]).per(1)
+    @users = User.order("name").where.not(:role => 0).where.not(:role => 1).where.not(:role => 4).where.not(:role => 3).page(params[:page]).per(1)
   end
   
   # Front of House evaluation form (for FOH shift leaders)
   def front
-    @users = User.order("name").where(:role => 1).page(params[:page]).per(1)
-    @users = User.order("name").where(:role => 4).page(params[:page]).per(1)
+   
+   @users = User.order("name").where.not(:role => 0).where.not(:role => 2).where.not(:role => 5).where.not(:role => 3).page(params[:page]).per(1)
   end
   
   # All evaluation form (for directors)
@@ -43,21 +42,11 @@ class UsersController < ApplicationController
   end
   
   def faverage
-    @array = []
-    @array2 = []
-    @array3 = []
-    @array4 = []
-    @array5 = []
-    @users = User.all
+    @users = User.order(overall: :desc)
   end
   
   def baverage
-    @array = []
-    @array2 = []
-    @array3 = []
-    @array4 = []
-    @array5 = []
-    @users = User.all
+     @users = User.order(overall: :desc)
   end
   
   def reset
