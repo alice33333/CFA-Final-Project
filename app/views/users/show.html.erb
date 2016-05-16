@@ -361,15 +361,15 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <% end %>
             </div>
             <div class="form-group">
-                <% average = User.average(:question_one) %>
+                <% average = User.average(:extra_one) %>
                 <% if average >= 0.0 && average <= 0.94 %>
                   <h2> <%= number_with_precision(average, :precision => 1) %> </h2>
                 <% end %>
                 <% if average >= 0.95 && average <= 1.94 %>
-                  <red><h2> <%= number_with_precision(average, :precision => 1) %> </h2></red>
+                  <red><h16> <%= number_with_precision(average, :precision => 1) %> </h16></red>
                 <% end %>
                 <% if average >= 1.95 && average <= 2.94 %>
-                  <orange><h2> <%= number_with_precision(average, :precision => 1) %> </h2></orange>
+                  <orange><h16> <%= number_with_precision(average, :precision => 1) %> </h16></orange>
                 <% end %>
                 <% if average >= 2.95 && average <= 3.94 %>
                   <yellow><h2> <%= number_with_precision(average, :precision => 1) %> </h2></yellow>
@@ -408,7 +408,7 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                     <h2> <%= @user.extra_two %> </h2>
                 <% end %>
                 <% if @user.extra_two >= 0.95 && @user.extra_two <= 1.94 %>
-                  <red><h2> <%= @user.extra_two %> </h2></red>
+                  <red><h16> <%= @user.extra_two %> </h16></red>
                 <% end %>
                 <% if @user.extra_two >= 1.95 && @user.extra_two <= 2.94 %>
                   <orange><h2> <%= @user.extra_two %> </h2></orange>
@@ -422,6 +422,28 @@ You strive to know more about your career"> <%= image_tag("info_three.png", :alt
                 <% if @user.extra_two >= 4.95 %>
                   <green><h2> <%= @user.extra_two %> </h2></green>
                 <% end %>
+            </div>
+            <div class="form-group">
+                <% average = User.average(:extra_two) %>
+                <% if average >= 0.0 && average <= 0.94 %>
+                  <h16> <%= number_with_precision(average, :precision => 1) %> </h16>
+                <% end %>
+                <% if average >= 0.95 && average <= 1.94 %>
+                  <red><h16> <%= number_with_precision(average, :precision => 1) %> </h16></red>
+                <% end %>
+                <% if average >= 1.95 && average <= 2.94 %>
+                  <orange><h16> <%= number_with_precision(average, :precision => 1) %> </h16></orange>
+                <% end %>
+                <% if average >= 2.95 && average <= 3.94 %>
+                  <yellow><h2> <%= number_with_precision(average, :precision => 1) %> </h2></yellow>
+                <% end %>
+                <% if average >= 3.95 && average <= 4.94 %>
+                  <lime><h2> <%= number_with_precision(average, :precision => 1) %> </h2></lime>
+                <% end %>
+                <% if average >= 4.95 %>
+                  <green><h2> <%= number_with_precision(average, :precision => 1) %> </h2></green>
+                <% end %>
+            </div>
             </div>
             <!--<div class="form-group">-->
             <!--   <% if @user.role == 1  || @user.role == 4 %>-->
