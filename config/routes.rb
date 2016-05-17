@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'average' => 'users#faverage'
   get 'score' => 'users#baverage'
   get 'reset' => 'users#reset'
+  get 'finished' => 'users#finished'
 
   # for logging in
   get    'login'   => 'sessions#new'
