@@ -1,3 +1,27 @@
 <% provide(:title, 'Reset') %>
 <h2>Reset</h2>
 
+<!--MAKE BUBBLES AND CREATE ANOTHER COLUMN IN DATABASE THAT'S BOOLEAN-->
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    
+    <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <aside class="col-md-11 col-md-offset-1">
+      <div class="form-group">
+            <div class="form-inline">
+              <div class="form-group">
+      <h3><%= @user.reset_one %></h3>
+        <%= f.check_box :reset_one %>
+      </div>
+       </div>
+        </div>
+     
+    <div class="col-md-6 col-md-offset-3">
+      <%= f.submit "Reset Averages", class: "btn btn-default" %>
+  </div>
+      
+    <% end %>
+    
+  </div>
+</div>

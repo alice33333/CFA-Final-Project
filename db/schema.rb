@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513182748) do
+ActiveRecord::Schema.define(version: 20160517182641) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -92,6 +92,9 @@ ActiveRecord::Schema.define(version: 20160513182748) do
     t.text     "comment_twenty_five"
     t.decimal  "overall",              precision: 2, scale: 1, default: 0.0
     t.boolean  "flag",                                         default: false
+    t.decimal  "reset_one",            precision: 2, scale: 1, default: 0.0
+    t.decimal  "reset_two",            precision: 2, scale: 1, default: 0.0
+    t.decimal  "reset_three",          precision: 2, scale: 1, default: 0.0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

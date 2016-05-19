@@ -337,9 +337,15 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
    
    
    <% if user.flag == true %>
+   <% unless @users.last_page? %>
     <script type="text/javascript">
   window.location.href="?page=<%=@users.current_page+1 %>"
   </script>
+  <% else %>
+   <script type="text/javascript">
+  window.location.href="/finished"
+  </script>
+    <% end %>
     <% end %>
       </div>
 </div>

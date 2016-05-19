@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # Permissions
   before_action :logged_in_user, only: []
   before_action :correct_user,   only: []
-  before_action :admin_user, only: [:index, :edit, :new, :all]
+  before_action :admin_user, only: [:index, :edit, :new, :all, :faverage, :baverage, :reset]
   before_action :second_tier_user, only: [:front, :back]
   before_action :manager_user, only: [:manager]
   
@@ -50,6 +50,7 @@ class UsersController < ApplicationController
   end
   
   def reset
+   @user = current_user
   end
   
   def create
@@ -510,8 +511,10 @@ class UsersController < ApplicationController
           #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
       end
       
+      if @user.role == 1 || @user.role == 2 || @user.role == 3 || @user.role == 4 || @user.role == 5
       overall = ((@user.question_one + @user.question_two + @user.question_three + @user.question_four + @user.question_five) / 5)
       @user.update_attribute :overall, overall
+      end
   
   # ADD ADMIN AND SECOND_TIER UPDATES HERE
       if @user.role == 0 
@@ -534,11 +537,14 @@ class UsersController < ApplicationController
          @user.update_attribute :admin, false
          @user.update_attribute :leader, false
       end
+      
+      if 
         redirect_to :back
     else
       render 'edit'
     end
   end
+end
   
   
   
@@ -565,7 +571,7 @@ class UsersController < ApplicationController
                                    :comment_four, :comment_five, :comment_six, :comment_seven, :comment_eight, :comment_nine, :comment_ten,
                                    :comment_eleven, :comment_twelve, :comment_thirteen, :comment_fourteen, :comment_fifteen, :comment_sixteen,
                                    :comment_seventeen, :comment_eighteen, :comment_nineteen, :comment_twenty, :comment_twenty_one, :comment_twenty_two, 
-                                   :comment_twenty_three, :comment_twenty_four, :comment_twenty_five, :overall)
+                                   :comment_twenty_three, :comment_twenty_four, :comment_twenty_five, :overall, :reset_one, :reset_two, :reset_three)
   end
   
   def user_question_params
