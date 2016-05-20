@@ -1,7 +1,9 @@
 <% provide(:title, 'Reset') %>
+<div class="col-md-10 text-center" > 
 <h2>Reset</h2>
+<h13> Warning: If you confirm, all questions and comments will be reset and all grades will be lost.</h13>
+</div>
 
-<!--MAKE BUBBLES AND CREATE ANOTHER COLUMN IN DATABASE THAT'S BOOLEAN-->
 <div class="row">
   <div class="col-md-4 col-md-offset-4">
     
@@ -11,14 +13,13 @@
       <div class="form-group">
             <div class="form-inline">
               <div class="form-group">
-      <h3><%= @user.reset_one %></h3>
-        <%= f.check_box :reset_one %>
+                <%= f.radio_button :flag, true, :checked => true %>
       </div>
        </div>
         </div>
      
-    <div class="col-md-6 col-md-offset-3">
-      <%= f.submit "Reset Averages", class: "btn btn-default" %>
+   <div class="col-md-9 col-md-offset-0">
+      <%= f.submit "Reset Averages", class: "btn btn-danger" %>
   </div>
       
     <% end %>

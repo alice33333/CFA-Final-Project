@@ -118,6 +118,7 @@ class UsersController < ApplicationController
   #current_one = current result
   #total_one = all the results
   def update
+    @users = User.all
     @user = User.find(params[:id])
     average = 0
     
@@ -538,9 +539,94 @@ class UsersController < ApplicationController
          @user.update_attribute :leader, false
       end
       
+      if @user.role == 0
+        if @user.flag == true
+           
+          @users.update_all(:question_one => 0.0)
+          @users.update_all(:one_counter => 0.0)
+          @users.update_all(:current_one => 0.0)
+          @users.update_all(:total_one => 0.0)
+          @users.update_all(:question_two => 0.0)
+          @users.update_all(:two_counter => 0.0)
+          @users.update_all(:current_two => 0.0)
+          @users.update_all(:total_two => 0.0)
+          @users.update_all(:question_three => 0.0)
+          @users.update_all(:three_counter => 0.0)
+          @users.update_all(:current_three => 0.0)
+          @users.update_all(:total_three => 0.0)
+          @users.update_all(:question_four => 0.0)
+          @users.update_all(:four_counter => 0.0)
+          @users.update_all(:current_four => 0.0)
+          @users.update_all(:total_four => 0.0)
+          @users.update_all(:question_five => 0.0)
+          @users.update_all(:five_counter => 0.0)
+          @users.update_all(:current_five => 0.0)
+          @users.update_all(:total_five => 0.0)
+          @users.update_all(:extra_one => 0.0)
+          @users.update_all(:extra_one_counter => 0.0)
+          @users.update_all(:current_extra_one => 0.0)
+          @users.update_all(:total_extra_one => 0.0)
+          @users.update_all(:extra_two => 0.0)
+          @users.update_all(:extra_two_counter => 0.0)
+          @users.update_all(:current_extra_two => 0.0)
+          @users.update_all(:total_extra_two => 0.0)
+          @users.update_all(:extra_three => 0.0)
+          @users.update_all(:extra_three_counter => 0.0)
+          @users.update_all(:current_extra_three => 0.0)
+          @users.update_all(:total_extra_three => 0.0)
+          @users.update_all(:extra_four => 0.0)
+          @users.update_all(:extra_four_counter => 0.0)
+          @users.update_all(:current_extra_four => 0.0)
+          @users.update_all(:total_extra_four => 0.0)
+          @users.update_all(:extra_five => 0.0)
+          @users.update_all(:extra_five_counter => 0.0)
+          @users.update_all(:current_extra_five => 0.0)
+          @users.update_all(:total_extra_five => 0.0)
+          @users.update_all(:overall => 0.0)
+          @users.update_all(:comment_one => nil)
+          @users.update_all(:comment_two => nil)
+          @users.update_all(:comment_three => nil)
+          @users.update_all(:comment_four => nil)
+          @users.update_all(:comment_five => nil)
+          @users.update_all(:comment_six => nil)
+          @users.update_all(:comment_seven => nil)
+          @users.update_all(:comment_eight => nil)
+          @users.update_all(:comment_nine => nil)
+          @users.update_all(:comment_ten => nil)
+          @users.update_all(:comment_eleven => nil)
+          @users.update_all(:comment_twelve => nil)
+          @users.update_all(:comment_thirteen => nil)
+          @users.update_all(:comment_fourteen => nil)
+          @users.update_all(:comment_fifteen => nil)
+          @users.update_all(:comment_sixteen => nil)
+          @users.update_all(:comment_seventeen => nil)
+          @users.update_all(:comment_eighteen => nil)
+          @users.update_all(:comment_nineteen => nil)
+          @users.update_all(:comment_twenty => nil)
+          @users.update_all(:comment_twenty_one => nil)
+          @users.update_all(:comment_twenty_two => nil)
+          @users.update_all(:comment_twenty_three => nil)
+          @users.update_all(:comment_twenty_four => nil)
+          @users.update_all(:comment_twenty_five => nil)
+          
+          if @user.role == 0
+          @users.where(:role => 0).update_all(:question_one => nil)
+          @users.where(:role => 0).update_all(:question_two => nil)
+          @users.where(:role => 0).update_all(:question_three => nil)
+          @users.where(:role => 0).update_all(:question_four => nil)
+          @users.where(:role => 0).update_all(:question_five => nil)
+          @users.where(:role => 0).update_all(:extra_one => nil)
+          @users.where(:role => 0).update_all(:extra_two => nil)
+          @users.where(:role => 0).update_all(:extra_three => nil)
+          @users.where(:role => 0).update_all(:extra_four => nil)
+          @users.where(:role => 0).update_all(:extra_five => nil)
+          end
+        end
+      end
+      
       if 
         redirect_to :back
-    else
+      else
       render 'edit'
     end
   end
@@ -571,7 +657,7 @@ end
                                    :comment_four, :comment_five, :comment_six, :comment_seven, :comment_eight, :comment_nine, :comment_ten,
                                    :comment_eleven, :comment_twelve, :comment_thirteen, :comment_fourteen, :comment_fifteen, :comment_sixteen,
                                    :comment_seventeen, :comment_eighteen, :comment_nineteen, :comment_twenty, :comment_twenty_one, :comment_twenty_two, 
-                                   :comment_twenty_three, :comment_twenty_four, :comment_twenty_five, :overall, :reset_one, :reset_two, :reset_three)
+                                   :comment_twenty_three, :comment_twenty_four, :comment_twenty_five, :overall)
   end
   
   def user_question_params

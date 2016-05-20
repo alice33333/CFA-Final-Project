@@ -571,7 +571,7 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
                     <%= f.text_area :comment_seventeen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
                 <% elsif user.comment_seventeen != nil && user.comment_eighteen == nil || user.comment_eighteen == "" %>
                     <%= f.text_area :comment_eighteen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
-                <% elsif user.comment_eighteen != nil && user.comment_ninenteen == nil || user.comment_nineteen == "" %>
+                <% elsif user.comment_eighteen != nil && user.comment_nineteen == nil || user.comment_nineteen == "" %>
                     <%= f.text_area :comment_nineteen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
                 <% elsif user.comment_nineteen != nil && user.comment_twenty == nil || user.comment_twenty == "" %>
                     <%= f.text_area :comment_twenty, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
@@ -589,6 +589,8 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
                 
                 
     </div>
+    
+   
     
          <div class="col-md-3 col-md-offset-4">
    <%= f.submit "Submit Score", class: "btn btn-default" %>
