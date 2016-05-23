@@ -1,16 +1,23 @@
 <% provide(:title, 'Front of House Averages') %>
 <h2>Front of House Averages</h2>
 
-     <% @users.each do |a, i| %>
+    <% i = 1 %>
+     <% @users.each do |a| %>
      <% if a.role == 1 || a.role == 4 %>
        <div class="form-inline">
     <div class="form-group">
-        <h2><%= i%> </h2>
+        <h17><%= i%> </h17>
+        </div>
+        <div class="form-group">
+        <h17><%= "."%> </h17>
+        </div>
+        <div class="form-group">
         <h2><%= a.name.to_s %> </h2>
         </div>
         <div class="form-group">
         <h2><%= a.overall.to_s %> </h2>
         </div>
+        <% i = i + 1 %>
     </div>
     <% end %>
     <% end %>

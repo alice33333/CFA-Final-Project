@@ -4,12 +4,22 @@
 <% @users.each do |user| %>
 
     <h4> <%= user.name %> </h4>
-    <h3> Do you have HEART?</h3>
+    
     
     <%= form_for(user) do |f| %>
     <% begin %>
+    
+    <div class="col-md-15 text-left" > 
+    <h13><%= "Unfamiliar with this team member and their work? That's fine! Press 'Next Employee' to skip over to the next team member:" %></h13>
+   <h13><%= paginate @users %> </h13>
+    </div>
+    
+    <h3> Do you have HEART?</h3>
   
         <h3><%= "Hover mouse over"%> <%= image_tag("info_three.png", :alt => "rss feed")%> <%="to see a detailed description of each letter" %></h3>
+        
+        
+        
         <h8> Hunger for Wisdom </h8>
          <a title="Hunger for Wisdom:
 Do they continue to learn and expand their knowledge?"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
