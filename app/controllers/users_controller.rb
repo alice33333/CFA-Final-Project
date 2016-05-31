@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # Permissions
   before_action :logged_in_user, only: []
   before_action :correct_user,   only: []
-  before_action :admin_user, only: [:index, :edit, :all, :faverage, :baverage, :reset, :create]
+  before_action :admin_user, only: [:index, :edit, :all, :faverage, :baverage, :reset]
   before_action :second_tier_user, only: [:front, :back]
   before_action :manager_user, only: [:manager]
   
