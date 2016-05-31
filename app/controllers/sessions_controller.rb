@@ -1,9 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-    @user = User.new(:name => "Lynnae Schneller", :email => "lynnae@example.com", :password => "foobar", :password_confirmation => "foobar", :role => 0, :username => "lynnae",
-    :admin => true)
-    @user.save
   end
 
   def create
