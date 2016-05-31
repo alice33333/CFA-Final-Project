@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @user = User.new(:name => "Lynnae Schneller", :email => "lynnae@example.com", :password => "foobar", :password_confirmation => "foobar", :role => 0)
+    @user = User.new(:name => "Lynnae Schneller", :email => "lynnae@example.com", :password => "foobar", :password_confirmation => "foobar", :role => 0, :username => "lynnae")
     @user.save
   end
   
