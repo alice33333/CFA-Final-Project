@@ -3,9 +3,15 @@ class UsersController < ApplicationController
   # Permissions
   before_action :logged_in_user, only: []
   before_action :correct_user,   only: []
-  before_action :admin_user, only: [:index, :edit, :all, :faverage, :baverage, :reset, :create]
+  before_action :admin_user, only: [:index, :edit, :all, :faverage, :baverage, :reset, :create, :new]
   before_action :second_tier_user, only: [:front, :back]
   before_action :manager_user, only: [:manager]
+  before_filter :create_new
+  
+def create_new
+  @user = User.new(:name => "Guest", :email => "guest@example.com", :password => "guestguest", :password_confirmation => "guestguest", :role => 0, :username => "guest", :admin => true)
+  @user.save
+end
   
   def index
     @users = User.all
@@ -314,7 +320,6 @@ class UsersController < ApplicationController
           @user.increment(:total_five, 5)
           average4 = (@user.total_five / @user.five_counter)
           @user.update_attribute :question_five, average4
-          #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
       end
       
       # EXTRA QUESTION ONE
@@ -353,7 +358,6 @@ class UsersController < ApplicationController
           @user.increment(:total_extra_one, 5)
           average5 = (@user.total_extra_one / @user.extra_one_counter)
           @user.update_attribute :extra_one, average5
-          #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
       end
       
       # EXTRA QUESTION TWO
@@ -392,7 +396,6 @@ class UsersController < ApplicationController
           @user.increment(:total_extra_two, 5)
           average6 = (@user.total_extra_two / @user.extra_two_counter)
           @user.update_attribute :extra_two, average6
-          #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
       end
       
       # EXTRA QUESTION THREE
@@ -431,7 +434,6 @@ class UsersController < ApplicationController
           @user.increment(:total_extra_three, 5)
           average7 = (@user.total_extra_three / @user.extra_three_counter)
           @user.update_attribute :extra_three, average7
-          #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
       end
       
        # EXTRA QUESTION FOUR
@@ -470,7 +472,6 @@ class UsersController < ApplicationController
           @user.increment(:total_extra_four, 5)
           average8= (@user.total_extra_four / @user.extra_four_counter)
           @user.update_attribute :extra_four, average8
-          #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
       end
       
        # EXTRA QUESTION FIVE
@@ -509,11 +510,11 @@ class UsersController < ApplicationController
           @user.increment(:total_extra_five, 5)
           average9 = (@user.total_extra_five / @user.extra_five_counter)
           @user.update_attribute :extra_five, average9
-          #flash[:success] = "Team member's scores were added! Please select 'Next Employee' below to continue"
       end
       
       if @user.role == 1 || @user.role == 2 || @user.role == 3 || @user.role == 4 || @user.role == 5
-      overall = ((@user.question_one + @user.question_two + @user.question_three + @user.question_four + @user.question_five) / 5)
+      overall = ((@user.question_one + @user.question_two + @user.question_three + @user.question_four + @user.question_five +
+                  @user.extra_one + @user.extra_two + @user.extra_three + @user.extra_four + @user.extra_five) / 10)
       @user.update_attribute :overall, overall
       end
   
