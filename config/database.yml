@@ -26,5 +26,5 @@ production:
   database: cfadatabase
   username: Alice
   password: cfapassword
-  host: west2-mysql-cfa.czrodsdknj3e.us-west-2.rds.amazonaws.com
+  host: west2-mysql-cfa.czrodsdknj3e.us-west-2.rds.amazonaws.com:3306
   port: 3306
