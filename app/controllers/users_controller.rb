@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   before_filter :create_new
   
 def create_new
-  @user = User.new(:name => "Guest", :email => "guest@example.com", :password => "guestguest", :password_confirmation => "guestguest", :role => 0, :username => "guest", :admin => true)
+  @user = User.new(:name => "Guest", :email => "lynnae.schneller@cfafranchisee.com", :password => "guestguest", :password_confirmation => "guestguest", :role => 0, :username => "guest", :admin => true)
   @user.save
 end
   
