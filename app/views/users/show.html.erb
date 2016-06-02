@@ -53,7 +53,9 @@
       
       
       
-   
+      <% @users.each do |user| %>
+        <% user.update_attribute :flag, false %>
+    <% end %>
       
       
       <aside class="col-md-10 col-md-offset-2">
