@@ -325,7 +325,11 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
                   <green><h2> <%= number_with_precision(average4, :precision => 1) %> </h2></green>
                 <% end %>
             </div>
+            <% if @user.role == 0 %>
             <h3><%= "Hover mouse over"%> <%= image_tag("info_three.png", :alt => "rss feed")%> <%="to see a detailed description of each letter" %></h3>
+            <% else %>
+            <h3><%= "Hover mouse over"%> <%= image_tag("info_three.png", :alt => "rss feed")%> <%="to see a detailed description" %></h3>
+            <% end %>
             <aside class="col-md-3 col-md-offset-2">
             <%= image_tag("scale.png", :alt => "rss feed")%>
             </aside>
@@ -347,16 +351,16 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
     <!-- extra question results -->
      <aside class="col-md-9 col-md-offset-1">
       <div class="form-group">
-              <% if @user.role == 1  || @user.role == 4 %>
-                <h3> Communicating respectively to Guests and Team Members </h3>
+              <% if @user.role == 1 %>
+                <h3> Communicating respectfully to Guests and Team Members </h3>
               <% end %>
               
-              <% if @user.role == 2  || @user.role == 5 %>
+              <% if @user.role == 2 %>
                 <h3> Following Proper Policies & Procedures </h3>
                 <h3> - i.e. Uniform, LEAN, Timers, Cell Phones </h3>
               <% end %>
               
-              <% if @user.role == 3 %>
+              <% if @user.role == 3 || @user.role == 4 || @user.role == 5 %>
                 <h3> Leading By Example </h3>
               <% end %>
               <div class="form-inline">
@@ -409,16 +413,16 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
             </div>
             </div>
             <div class="form-group">
-              <% if @user.role == 1  || @user.role == 4 %>
+              <% if @user.role == 1 %>
                 <h3> Following Proper Policies & Procedures - i.e. Uniforms, </h3>
                 <h3> Portioning, Sauces, Cell Phones </h3>
               <% end %>
               
-               <% if @user.role == 2  || @user.role == 5 %>
+               <% if @user.role == 2 %>
                 <h3> Communicating respectively to Guests and Team Members </h3>
               <% end %>
               
-              <% if @user.role == 3 %>
+              <% if @user.role == 3 || @user.role == 4 || @user.role == 5 %>
                 <h3> Taking Initiative </h3>
               <% end %>
               
@@ -473,16 +477,16 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
             </div>
             
             <div class="form-group">
-               <% if @user.role == 1  || @user.role == 4 %>
+               <% if @user.role == 1 %>
                 <h3> Attendance & Punctuality </h3>
               <% end %>
               
-              <% if @user.role == 2  || @user.role == 5 %>
+              <% if @user.role == 2 %>
                 <h3> Knowing & Adhering to Food Safety Procedures </h3>
                 <h3> - i.e. changing gloves, washing hands </h3>
               <% end %>
               
-              <% if @user.role == 3 %>
+              <% if @user.role == 3 || @user.role == 4 || @user.role == 5 %>
                 <h3> Ability to run a shift efficiently </h3>
               <% end %>
               
@@ -536,15 +540,15 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
             </div>
             
             <div class="form-group">
-              <% if @user.role == 1  || @user.role == 4 %>
+              <% if @user.role == 1 %>
                 <h3> Going above & beyond for guests - Second Mile Service </h3>
               <% end %>
               
-              <% if @user.role == 2  || @user.role == 5 %>
+              <% if @user.role == 2 %>
                 <h3> Attendance & Punctuality </h3>
               <% end %>
               
-              <% if @user.role == 3 %>
+              <% if @user.role == 3 || @user.role == 4 || @user.role == 5 %>
                 <h3> Actively Involved in Leadership Development Program </h3>
               <% end %>
               
@@ -598,15 +602,15 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
             </div>
             
             <div class="form-group">
-               <% if @user.role == 1  || @user.role == 4 %>
+               <% if @user.role == 1 %>
                 <h3> Knowing & Following Store Non-negotiables </h3>
               <% end %>
               
-               <% if @user.role == 2  || @user.role == 5 %>
+               <% if @user.role == 2 %>
                 <h3> Knowing & Following Store Non-negotiables </h3>
               <% end %>
               
-              <% if @user.role == 3 %>
+              <% if @user.role == 3 || @user.role == 4 || @user.role == 5 %>
                 <h3>  Follow through - to projects and responsibilities given, </h3>
                 <h3>  and inspecting what you expect from team members </h3>
               <% end %>
@@ -669,6 +673,10 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
     <% if @user.role == 1 || @user.role == 2 || @user.role == 3 || @user.role == 4 || @user.role == 5 %>
      <aside class="col-md-11 col-md-offset-1"> 
     <h14><%= "Comments:" %></h14>
+    <% if @user.comment_one == nil || @user.comment_one == "" %>
+    <div></div>
+    <h15> No additional comments currently available </h15>
+    <% end %>
     <h13><%= simple_format( @user.comment_one) %></h13>
     <h13><%= simple_format( @user.comment_two) %></h13>
     <h13><%= simple_format( @user.comment_three) %></h13>
