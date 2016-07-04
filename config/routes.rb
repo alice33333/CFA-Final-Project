@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'score' => 'users#baverage'
   get 'reset' => 'users#reset'
   get 'finished' => 'users#finished'
+  get 'before' => 'users#before'
 
   # for logging in
   get    'login'   => 'sessions#new'

@@ -30,23 +30,22 @@
           <h3>Shift Leader</h3>
         <% end %>
       </h5>
-      
-      
-      <div class="col-md-1 text-center" > 
+    
+    <div class="col-md-1 text-center" > 
       <% if @user.role == 0 && @user == current_user %>
-       <%= link_to "Evaluate Team", all_path, class: "btn btn-lg btn-default" %>
+       <%= link_to "Evaluate Team", before_path, class: "btn btn-lg btn-default" %>
       <% end %>
       
       <% if @user.role == 4 && @user == current_user %>
-       <%= link_to "Evaluate Front", front_path, class: "btn btn-lg btn-default" %>
+       <%= link_to "Evaluate Front", before_path, class: "btn btn-lg btn-default" %>
       <% end %>
       
       <% if @user.role == 5 && @user == current_user %>
-       <%= link_to "Evaluate Back", back_path, class: "btn btn-lg btn-default" %>
+       <%= link_to "Evaluate Back", before_path, class: "btn btn-lg btn-default" %>
       <% end %>
       
       <% if @user.role == 3 && @user == current_user %>
-       <%= link_to "Evaluate Team", manager_path, class: "btn btn-lg btn-default" %>
+       <%= link_to "Evaluate Team", before_path, class: "btn btn-lg btn-default" %>
       <% end %>
        </div>
     </section>

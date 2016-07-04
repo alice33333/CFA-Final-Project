@@ -5,14 +5,18 @@
 
     <h4> <%= user.name %> </h4>
     
+    
     <%= form_for(user) do |f| %>
     <% begin %>
-   
     
-    <h3> Do you have HEART?</h3>
+    
   
-        <h3><%= "Hover mouse over"%> <%= image_tag("info_three.png", :alt => "rss feed")%> <%="to see detailed description of each letter" %></h3>
-        <h8> Hunger for Wisdom </h8>
+        <h3><%= "Hover mouse over"%> <%= image_tag("info_three.png", :alt => "rss feed")%> <%="to see a detailed description" %></h3>
+        <h18> Scaling from 1 to 5, 5 respresents the best score</h18>
+        
+        <h3> Do you have HEART?</h3>
+        
+        <h8> <b>H</b>unger for Wisdom </h8>
          <a title="Hunger for Wisdom:
 Do they continue to learn and expand their knowledge?"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
@@ -39,7 +43,7 @@ Do they continue to learn and expand their knowledge?"> <%= image_tag("info_thre
             </div>
     
         
-        <h8> Expect the Best </h8>
+        <h8> <b>E</b>xpect the Best </h8>
          <a title="Expect the Best:
 Are they a role model living up to our standards or do they try to cut corners?"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
@@ -65,7 +69,7 @@ Are they a role model living up to our standards or do they try to cut corners?"
             </div>
             </div>
             
-        <h8> Accept Responsibility </h8>
+        <h8> <b>A</b>ccept Responsibility </h8>
          <a title="Accept Responsibility:
 When they made a mistake, do they own up to
 it and grow from the experience?"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
@@ -92,7 +96,7 @@ it and grow from the experience?"> <%= image_tag("info_three.png", :alt => "rss 
             </div>
             </div>
             
-        <h8> Respond with Courage </h8>
+        <h8> <b>R</b>espond with Courage </h8>
          <a title="Respond with Courage:
 Do they do the right thing even when it’s not easy?"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
@@ -118,7 +122,7 @@ Do they do the right thing even when it’s not easy?"> <%= image_tag("info_thre
             </div>
             </div>
             
-        <h8> Think others first </h8>
+        <h8> <b>T</b>hink others first </h8>
          <a title="Think others first:
 Do they think of their fellow team members and how they can help them 
 before they think of what’s easiest for them?"> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
@@ -145,10 +149,13 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
             </div>
             </div>
     
+    <br></br>
+    <h3> Additional Store Values </h3>
     
     <!-- Front of House -->
-    <% if user.role == 1 || user.role == 4 %>
-       <h8> Communicating respectively to Guests and Team Members </h8>
+    <% if user.role == 1 %>
+       <h8> Communicating respectfully to Guests and Team Members </h8>
+       <a title="Able to clearly communicate, even in difficult situations, and address customers in a way that makes them feel valued and important."> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
             <div class="form-group">
                  <%= f.radio_button :current_extra_one, 1 %>
@@ -174,6 +181,7 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
             
             <div class="form-group">
         <h8> Following Proper Policies & Procedures - i.e. Uniforms, Portioning, Sauces, Cell Phones </h8>
+        <a title="Know and follow all policies in place, including proper uniforms, no cell phones, following lean, proper recipes, etc."> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
             <div class="form-group">
                  <%= f.radio_button :current_extra_two, 1 %>
@@ -224,6 +232,7 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
             
              <div class="form-group">
         <h8> Going above & beyond for guests - Second Mile Service </h8>
+        <a title="Being attentive and courteous to guests, trying to anticipate their needs and going above and beyond their expectations."> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
             <div class="form-group">
                  <%= f.radio_button :current_extra_four, 1 %>
@@ -249,6 +258,10 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
             
                <div class="form-group">
         <h8> Knowing & Following Store Non-negotiables </h8>
+        <a title="1. Treat everyone with honor, dignity and respect.
+2. From the parking lot to the bathrooms, this is your store. Keep it clean!
+3. Every guest should be served within 30 seconds.
+4. Every guest will receive a warm welcome and a fond farewell."> <%= image_tag("info_three.png", :alt => "rss feed")%> </a>
             <div class="form-inline">
             <div class="form-group">
                  <%= f.radio_button :current_extra_five, 1 %>
@@ -275,7 +288,7 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
     <% end %>
     
     <!-- Back of House -->
-    <% if user.role == 2 || user.role == 5 %>
+    <% if user.role == 2 %>
     <div class="form-group">
         <h8> Following Proper Policies & Procedures - i.e. Uniform, LEAN, Timers, Cell Phones </h8>
             <div class="form-inline">
@@ -302,7 +315,7 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
             </div>
             
             <div class="form-group">
-        <h8> Communicating respectively to Guests and Team Members </h8>
+        <h8> Communicating respectfully to Guests and Team Members </h8>
             <div class="form-inline">
             <div class="form-group">
                  <%= f.radio_button :current_extra_two, 1 %>
@@ -404,7 +417,7 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
     <% end %>
     
     <!-- Managers -->
-    <% if user.role == 3  %>
+    <% if user.role == 3 || user.role == 4 || user.role == 5 %>
         <h8> Leading By Example </h8>
             <div class="form-inline">
             <div class="form-group">
@@ -573,7 +586,7 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
                     <%= f.text_area :comment_seventeen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
                 <% elsif user.comment_seventeen != nil && user.comment_eighteen == nil || user.comment_eighteen == "" %>
                     <%= f.text_area :comment_eighteen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
-                <% elsif user.comment_eighteen != nil && user.comment_ninenteen == nil || user.comment_nineteen == "" %>
+                <% elsif user.comment_eighteen != nil && user.comment_nineteen == nil || user.comment_nineteen == "" %>
                     <%= f.text_area :comment_nineteen, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
                 <% elsif user.comment_nineteen != nil && user.comment_twenty == nil || user.comment_twenty == "" %>
                     <%= f.text_area :comment_twenty, :rows => '12', :size => 10, placeholder: "Leave a comment..."  %>
@@ -592,11 +605,13 @@ before they think of what’s easiest for them?"> <%= image_tag("info_three.png"
                 
     </div>
     
+   
+    
          <div class="col-md-3 col-md-offset-4">
    <%= f.submit "Submit Score", class: "btn btn-default" %>
    
    
-   <% if user.flag == true %>
+  <% if user.flag == true %>
    <% unless @users.last_page? %>
     <script type="text/javascript">
   window.location.href="?page=<%=@users.current_page+1 %>"

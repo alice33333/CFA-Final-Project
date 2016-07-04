@@ -1,0 +1,25 @@
+<% provide(:title, 'Before Evaluation') %>
+<div class="col-md-10 text-center" > 
+<h13> <b>Caution</b>: If you choose to log out or return to your homepage, save the URL of the current team member you are on.
+This can be achieved by highlighting the entire address bar, right-clicking, and selecting copy. Paste this URL into a safe place since leaving the evaluation will result in starting over at the beginning of the evaluation. Also, if you are unfamiliar
+with a team member or would simply like to skip over them, pressing 'Submit Score' at the bottom of their form will allow
+you to continue onto the next employee.</h13>
+
+<br></br>
+
+      <% if current_user.role == 0 %>
+       <%= link_to "Continue", all_path, class: "btn btn-lg btn-default" %>
+      <% end %>
+      
+      <% if current_user.role == 4 %>
+       <%= link_to "Continue", front_path, class: "btn btn-lg btn-default" %>
+      <% end %>
+      
+      <% if current_user.role == 5 %>
+       <%= link_to "Continue", back_path, class: "btn btn-lg btn-default" %>
+      <% end %>
+      
+      <% if current_user.role == 3 %>
+       <%= link_to "Continue", manager_path, class: "btn btn-lg btn-default" %>
+      <% end %>
+     
